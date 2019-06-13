@@ -1,0 +1,37 @@
+.card
+  .card__header
+    .card__picture
+      .card__picture-overlay &nbsp;
+      img.card__picture-img(src='img/tour-1-cover.jpg', alt='Tour 1')
+    h3.heading-tertirary
+      span The Forest Hiker
+
+  .card__details
+    h4.card__sub-heading Easy 5-day tour
+    p.card__text Breathtaking hike through the Canadian Banff National Park
+    .card__data
+      svg.card__icon
+        use(xlink:href='img/icons.svg#icon-map-pin')
+      span Banff, Canada
+    .card__data
+      svg.card__icon
+        use(xlink:href='img/icons.svg#icon-calendar')
+      span April 2021
+    .card__data
+      svg.card__icon
+        use(xlink:href='img/icons.svg#icon-flag')
+      |       
+      span 3 stops
+    .card__data
+      svg.card__icon
+        use(xlink:href='img/icons.svg#icon-user')
+      span 25 people
+
+  .card__footer
+    p
+      span.card__footer-value $297
+      span.card__footer-text per person
+    p.card__ratings
+      span.card__footer-value 4.9
+      span.card__footer-text rating (21)
+    a.btn.btn--green.btn--small(href='#') Details
