@@ -30,6 +30,10 @@ For each of the extensions, read the overview page in order to learn how to use 
 
 `Project Manager` to easily switch between projects. One of the most useful extensions. [Link &rarr;](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)
 
+### Terminal
+
+To make your terminal as pretty as mine, you need to use a tool called `oh-my-zsh`. I followed [this tutorial &rarr;](https://www.freecodecamp.org/news/jazz-up-your-zsh-terminal-in-seven-steps-a-visual-guide-e81a8fd59a38/) to set it up.
+
 ### Settings
 
 If you want your editor to work and look exactly the same way as mine does in the course videos, you can copy these settings to your own settings file (`settings.json`).
