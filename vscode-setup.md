@@ -26,6 +26,8 @@ For each of the extensions, read the overview page in order to learn how to use 
 
 ### Other extensions I use
 
+`Bracket Pair Colorizer 2` to make it easy to find matching brackets. [Link &rarr;](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2)
+
 `Settings sync` to synchronize all your settings between computers. [Link &rarr;](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
 
 `Project Manager` to easily switch between projects. One of the most useful extensions. [Link &rarr;](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)
