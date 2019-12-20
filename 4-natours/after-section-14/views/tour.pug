@@ -65,7 +65,7 @@ block content
   section.section-pictures
     each img, i in tour.images
       .picture-box
-        img.picture-box__img(src=`/img/tours/${img}`, alt=`The Park Camper Tour ${i + 1}`, class=`picture-box__img--${i + 1}`)
+        img.picture-box__img(src=`/img/tours/${img}`, alt=`The ${tour.name} Tour ${i + 1}`, class=`picture-box__img--${i + 1}`)
 
   section.section-map
     #map(data-locations=`${JSON.stringify(tour.locations)}`)
