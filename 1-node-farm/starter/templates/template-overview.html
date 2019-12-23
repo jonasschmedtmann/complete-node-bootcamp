@@ -16,6 +16,12 @@
     <title>NODE FARM</title>
 
     <style>
+      :root {
+        --color-primary: rgba(95, 182, 248, 1);
+        --color-secondary: rgba(2, 89, 182, 1);
+        --color-white: #fff;
+      }
+
       *,
       *::before,
       *::after {
@@ -35,13 +41,17 @@
         font-family: "Nunito Sans", sans-serif;
         color: #555;
         min-height: 100vh;
-        background: linear-gradient(to bottom right, #9be15d, #00e3ae);
+        background: linear-gradient(
+          to bottom right,
+          var(--color-primary),
+          var(--color-secondary)
+        );
       }
 
       h1 {
         font-family: "Megrim", sans-serif;
         font-size: 6rem;
-        color: white;
+        color: var(--color-white);
         transform: skewY(-5deg);
         text-align: center;
         position: relative;
@@ -56,7 +66,11 @@
         position: absolute;
         top: 105%;
         left: 50%;
-        background: linear-gradient(to bottom, #9be15d, #00e3ae);
+        background: linear-gradient(
+          to bottom,
+          var(--color-primary),
+          var(--color-secondary)
+        );
         opacity: 0.8;
         z-index: -1;
         transform: skewY(370deg) translate(-50%, -50%);
@@ -72,7 +86,7 @@
       }
 
       .card {
-        background: white;
+        background: var(--color-white);
         box-shadow: 0 2rem 6rem 1rem rgba(0, 0, 0, 0.15);
         margin-bottom: 5rem;
         transform: skewX(-20deg);
@@ -89,7 +103,11 @@
       }
 
       .card__title-box {
-        background: linear-gradient(to bottom, #9be15d, #00e3ae);
+        background: linear-gradient(
+          to bottom,
+          var(--color-primary),
+          var(--color-secondary)
+        );
         margin-right: auto;
         display: flex;
         align-items: center;
@@ -98,7 +116,7 @@
 
       .card__title {
         font-family: "Megrim", sans-serif;
-        color: white;
+        color: var(--color-white);
         font-size: 3.25rem;
         transform: skewX(20deg);
       }
@@ -129,7 +147,11 @@
         font-weight: 900;
         text-transform: uppercase;
         font-size: 1.9rem;
-        background-image: linear-gradient(to right, #9be15d, #00e3ae);
+        background-image: linear-gradient(
+          to right,
+          var(--color-primary),
+          var(--color-secondary)
+        );
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
@@ -143,8 +165,8 @@
       .card__link:link,
       .card__link:visited {
         flex: 0 0 auto;
-        background-color: #79e17b;
-        color: white;
+        background-color: var(--color-primary);
+        color: var(--color-white);
         font-size: 1.6rem;
         font-weight: 900;
         text-transform: uppercase;
@@ -159,7 +181,7 @@
 
       .card__link:hover,
       .card__link:active {
-        background-color: #9be15d;
+        background-color: var(--color-primary);
       }
 
       .card__link span {
