@@ -2,23 +2,10 @@ const fs = require("fs");
 const http = require("http");
 const url = require("url");
 
+// replaceTemplat is a custom module from the modules folder
+const replaceTemplate = require("./modules/replaceTemplate");
 ////////////////////////////////////////
 /// SERVER
-
-const replaceTemplate = (temp, product) => {
-  let output = temp.replace(/{%PRODUCTNAME%}/g, product.productName);
-  output = output.replace(/{%IMAGE%}/g, product.image);
-  output = output.replace(/{%FROM%}/g, product.from);
-  output = output.replace(/{%NUTRIENTS%}/g, product.nutrients);
-  output = output.replace(/{%QUANTITY%}/g, product.quantity);
-  output = output.replace(/{%PRICE%}/g, product.price);
-  output = output.replace(/{%DESCRIPTION%}/g, product.description);
-  output = output.replace(/{%ID%}/, product.id);
-
-  if (!product.organic)
-    output = output.replace(/{%NOT_ORGANIC%}/g, "not-organic");
-  return output;
-};
 
 const tempOverview = fs.readFileSync(
   `${__dirname}/templates/template-overview.html`,
@@ -35,15 +22,15 @@ const tempProduct = fs.readFileSync(
 
 // This will get the content in json in the file or server
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8");
+
 // This will trurn the string from the json server or file and turns it into JavaScript
 const dataObj = JSON.parse(data);
 
 const server = http.createServer((req, res) => {
-  console.log(req.url);
+  const { query, pathname } = url.parse(req.url, true);
 
-  const pathName = req.url;
   //  Overvew page
-  if (pathName === "/" || pathName === "/overview") {
+  if (pathname === "/" || pathname === "/overview") {
     res.writeHead(200, { "Content-type": "text/html" });
 
     const cardsHtml = dataObj
@@ -53,11 +40,19 @@ const server = http.createServer((req, res) => {
     console.log(finalOutput);
     res.end(finalOutput);
     //  Product page
-  } else if (pathName === "/products") {
-    res.end("Product page is active");
-  } else if (pathName === "/api") {
+  } else if (pathname === "/product") {
+    res.writeHead(200, { "Content-type": "text/html" });
+
+    // the product will select the query id of each product page it is on using the [] nodation e.g Array[0] or Array[4]
+    const product = dataObj[query.id];
+
+    const output = replaceTemplate(tempProduct, product);
+
+    res.end(output);
+  } else if (pathname === "/api") {
     //  API page
     res.writeHead(200, { "Content-type": "application/json" });
+
     res.end(data);
   } else {
     // Error Page / Not found
@@ -65,6 +60,7 @@ const server = http.createServer((req, res) => {
       "Content-type": "text/html",
       "Is-user-online": "fun"
     });
+
     res.end("<h1> Page not found </h1> ");
   }
 });
