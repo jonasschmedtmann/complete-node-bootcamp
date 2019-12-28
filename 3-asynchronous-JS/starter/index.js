@@ -42,10 +42,36 @@ const getDogPic = async () => {
     console.log('Random dog image saved to file');
   } catch (err) {
     console.log(err.message);
-  }
-};
-getDogPic();
 
+    throw err;
+  }
+  return '2: READY 😀';
+};
+
+(async () => {
+  try {
+    const res = await getDogPic();
+    console.log(res);
+    console.log('Step 1 will get dog pics');
+    console.log('Step 3 done pics');
+  } catch (err) {
+    console.log('ERROR ❌');
+  }
+})();
+
+/**
+console.log('Step 1 will get dog pics');
+
+// REMEMBER to use .then() to access the data from the getDogPic() function
+getDogPic()
+  .then(x => {
+    console.log(x);
+    console.log('Step 3 done pics');
+  })
+  .catch(err => {
+    console.log('ERROR ❌');
+  });
+*/
 /*
 Write your comment here
 readFilePro(`${__dirname}/dog.txt`)
