@@ -1,0 +1,14 @@
+{
+  "name": "natours",
+  "version": "1.0.1",
+  "description": "Updated version of the natours app ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Danjuma Ashiwaju",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
