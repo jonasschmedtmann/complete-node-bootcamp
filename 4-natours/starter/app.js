@@ -22,7 +22,11 @@ const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
 );
 
-// 2 ROUTE HANDLERS
+// 2 ROUTE HANDLERS ||  CONTROLLERS
+/*
+Tours route handlers
+*/
+
 const getAllTours = (req, res) => {
   console.log(req.requestTime);
   res.status(200).json({
@@ -108,24 +112,79 @@ const deleteTour = (req, res) => {
   });
 };
 
-// *NOTE* : sign to create a variable param ie (:id || :anyName || :x)
-// app.get('/api/v1/tours', getAllTours);
-// app.post('/api/v1/tours', createTour);
-// app.get('/api/v1/tours/:id', getTour);
-// app.patch('/api/v1/tours/:id', updateTour);
-// app.delete('/api/v1/tours/:id', deleteTour);
+/*
+Users route handlers
+*/
+const getAllUsers = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route has not yet been implimented'
+  });
+};
+
+const createUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route has not yet been implimented'
+  });
+};
+
+const getUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route has not yet been implimented'
+  });
+};
+
+const updateUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route has not yet been implimented'
+  });
+};
+
+const deleteUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route has not yet been implimented'
+  });
+};
 
 // 3) ROUTES
-app
-  .route('/api/v1/tours')
+/*
+Tours routes
+*/
+
+const tourRouter = express.Router();
+const userRouter = express.Router();
+
+app.use('/api/v1/tours', tourRouter);
+app.use('/api/v1/users', userRouter);
+
+tourRouter
+  .route('/')
   .get(getAllTours)
   .post(createTour);
 
-app
-  .route('/api/v1/tours/:id')
+tourRouter
+  .route('/:id')
   .get(getTour)
   .patch(updateTour)
   .delete(deleteTour);
+
+/*
+Users routes
+*/
+userRouter
+  .route('/')
+  .get(getAllUsers)
+  .post(createUser);
+
+userRouter
+  .route('/:id')
+  .get(getUser)
+  .patch(updateUser)
+  .delete(deleteUser);
 
 // 4) START THE SERVER
 const port = 3000;
