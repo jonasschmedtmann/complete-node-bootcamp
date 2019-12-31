@@ -7,8 +7,8 @@ const userRouter = require('./routes/userRoutes');
 
 // 1) Middlewears
 app.use(morgan('dev'));
-
 app.use(express.json());
+app.use(express.static(`${__dirname}/public`));
 
 // The use() method is to use any || all middlewears
 app.use((req, res, next) => {
