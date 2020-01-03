@@ -4,47 +4,63 @@ const Tour = require('./../models/tourModel');
 //   fs.readFileSync(`${__dirname}/../dev-data/data/tours-simple.json`)
 // );
 
-exports.checkBody = (req, res, next) => {
-  if (!req.body.name || !req.body.price) {
-    return res.status(400).json({
+// Tours Controllers
+exports.getAllTours = async (req, res) => {
+  try {
+    const tours = await Tour.find();
+
+    res.status(200).json({
+      status: 'success',
+      results: tours.length,
+      data: {
+        tours
+      }
+    });
+  } catch (err) {
+    res.status(404).json({
       status: 'fail',
-      message: 'Missing name or price'
+      message: 'Invalid data sent ☹️'
     });
   }
-  next();
 };
 
-// Tours Controllers
-exports.getAllTours = (req, res) => {
-  // res.status(200).json({
-  //   status: 'success',
-  //   requsetedAt: req.requestTime,
-  //   results: tours.length,
-  //   data: {
-  //     tours
-  //   }
-  // });
+exports.getTour = async (req, res) => {
+  // Tour.findOne({_id: req.params.id})
+  const tour = await Tour.findById(req.params.id);
+  try {
+    res.status(200).json({
+      status: 'success',
+      data: {
+        tour
+      }
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: 'fail',
+      message: 'Invalid data sent ☹️'
+    });
+  }
 };
 
-exports.getTour = (req, res) => {
-  // Using * 1 ie req.params.id * 1 is a type converstion
-  // const id = req.params.id * 1;
-  // const tour = tours.find(el => el.id === id);
-  // res.status(200).json({
-  //   status: 'success',
-  //   data: {
-  //     tour
-  //   }
-  // });
-};
+exports.createTour = async (req, res) => {
+  try {
+    // const newTour = new Tour({});
+    // newTour.save();
 
-exports.createTour = (req, res) => {
-  res.status(201).json({
-    status: 'success'
-    //   data: {
-    //     tour: newTour
-    //   }
-  });
+    const newTour = await Tour.create(req.body);
+
+    res.status(201).json({
+      status: 'success',
+      data: {
+        tour: newTour
+      }
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      message: 'Invalid data sent ☹️'
+    });
+  }
 };
 
 exports.updateTour = (req, res) => {
