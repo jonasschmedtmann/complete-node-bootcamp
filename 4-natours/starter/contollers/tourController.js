@@ -5,7 +5,6 @@ const tours = JSON.parse(
 );
 
 exports.checkID = (req, res, next, val) => {
-  console.log(`Tour id is ${val}`);
   if (req.params.id * 1 > tours.length) {
     return res.status(404).json({
       status: 'fail',
@@ -16,7 +15,6 @@ exports.checkID = (req, res, next, val) => {
 };
 
 exports.checkBody = (req, res, next) => {
-  console.log(` ${req.params}`);
   if (!req.body.name || !req.body.price) {
     return res.status(400).json({
       status: 'fail',
@@ -28,7 +26,6 @@ exports.checkBody = (req, res, next) => {
 
 // Tours Controllers
 exports.getAllTours = (req, res) => {
-  console.log(req.requestTime);
   res.status(200).json({
     status: 'success',
     requsetedAt: req.requestTime,
@@ -38,8 +35,8 @@ exports.getAllTours = (req, res) => {
     }
   });
 };
+
 exports.getTour = (req, res) => {
-  console.log(req.params);
   // Using * 1 ie req.params.id * 1 is a type converstion
   const id = req.params.id * 1;
   const tour = tours.find(el => el.id === id);
