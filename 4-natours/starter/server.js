@@ -1,7 +1,23 @@
+const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const app = require('./app');
 
 dotenv.config({ path: 'config.env' });
-const app = require('./app');
+
+const DB = process.env.DATABASE.replace(
+  '<PASSWORD>',
+  process.env.DATABASE_PASSWORD
+);
+
+// * REMEMBER  * .connect(process.env.DATABASE_LOCAL, {...}) to connect to the local server env
+
+mongoose
+  .connect(DB, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  })
+  .then(() => console.log('Connection succesfull Hurray!!!'));
 
 // console.log(app.get('env'));
 // console.log(process.env);

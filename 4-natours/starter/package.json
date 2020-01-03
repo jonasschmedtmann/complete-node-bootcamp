@@ -4,7 +4,7 @@
   "description": "Updated version of the natours app ",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "start": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js"
   },
   "author": "Danjuma Ashiwaju",
