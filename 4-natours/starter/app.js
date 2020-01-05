@@ -16,6 +16,7 @@ app.use(express.static(`${__dirname}/public`));
 
 // The use() method is to use any || all middlewears
 app.use((req, res, next) => {
+  console.log('Hello from middleware ☺️');
   next();
 });
 
