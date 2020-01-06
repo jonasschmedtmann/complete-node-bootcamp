@@ -4,6 +4,12 @@ const Tour = require('./../models/tourModel');
 //   fs.readFileSync(`${__dirname}/../dev-data/data/tours-simple.json`)
 // );
 
+exports.aliasToTours = (req, res, next) => {
+  req.query.limit = '5';
+  req.query.sort = '-ratingsAverage,price';
+  req.query.fields = 'name,price,ratingsAverage,summary,difficulty';
+  next();
+};
 // Tours Controllers
 exports.getAllTours = async (req, res) => {
   try {
@@ -21,7 +27,6 @@ exports.getAllTours = async (req, res) => {
     let query = Tour.find(JSON.parse(queryStr));
 
     // 2) Sorting
-
     if (req.query.sort) {
       const sortBy = req.query.sort.split(',').join(' ');
 
@@ -51,12 +56,6 @@ exports.getAllTours = async (req, res) => {
 
     //Execute Query
     const tours = await query;
-
-    // const tours = Tour.find()
-    //   .where('duration')
-    //   .equals(5)
-    //   .where('difficulty')
-    //   .equals('easy');
 
     // Send Response
     res.status(200).json({
