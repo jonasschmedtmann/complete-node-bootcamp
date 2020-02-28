@@ -243,9 +243,9 @@ body {
   font-size: 1.4rem !important;
 }
 
-.btn-small,
-.btn-small:link,
-.btn-small:visited {
+.btn--small,
+.btn--small:link,
+.btn--small:visited {
   background-color: #55c57a;
   color: #fff;
   font-size: 1.4rem;
@@ -261,7 +261,7 @@ body {
   border: none;
 }
 
-.btn-small:hover {
+.btn--small:hover {
   background-color: #7dd56f;
 }
 
