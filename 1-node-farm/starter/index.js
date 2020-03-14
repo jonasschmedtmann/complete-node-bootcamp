@@ -2,6 +2,7 @@ const fileSystem = require('fs');
 const http = require('http');
 const url = require('url');
 
+
 /*const welcome ='Welcome to Node JS';
 
 console.log(welcome);*/
@@ -45,6 +46,11 @@ fileSystem.readFile('./txt/start.txt', 'utf-8', (err, data)=>{
 
 ///////////////////////////
 //SERVER
+
+var data = fileSystem.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');//gets string data
+
+var dataObject=JSON.parse(data);//converting string to object to loop later
+
 http.createServer((req, res)=>{
     const pathName = req.url;
     
@@ -53,6 +59,12 @@ http.createServer((req, res)=>{
     }
     else if(req.url=='/product'){
         res.end('you are trying to reach product page');
+    }
+    else if(req.url=='/api'){
+        res.writeHead(200, {
+            'Content-type': 'application/json'
+        });
+        res.end(data);
     }
     else {
         res.writeHead(404, {//status code
