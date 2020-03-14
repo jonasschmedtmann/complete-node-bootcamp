@@ -1,4 +1,5 @@
 const fileSystem = require('fs');
+const http = require('http');
 
 /*const welcome ='Welcome to Node JS';
 
@@ -20,6 +21,7 @@ console.log(fromOutputFile);
 
 
 //Non-blocking, Asynchronous way
+/*
 fileSystem.readFile('./txt/start.txt', 'utf-8', (err, data)=>{
     if(err) return console.log('ERROR!');
     
@@ -37,3 +39,13 @@ fileSystem.readFile('./txt/start.txt', 'utf-8', (err, data)=>{
     });
 }); //readFile method takes a call back as the third argument
    console.log('this prints before the data from start.txt file');
+
+*/
+
+///////////////////////////
+//SERVER
+http.createServer((req, res)=>{
+    res.end(`Hello from the server! Here is your path - ${req.url}`);
+}).listen(8000, '127.0.0.1', ()=>{ //port, host is current computer
+    console.log('listening to requests on port 8000');
+});
