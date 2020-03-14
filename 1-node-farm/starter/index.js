@@ -1,5 +1,6 @@
 const fileSystem = require('fs');
 const http = require('http');
+const url = require('url');
 
 /*const welcome ='Welcome to Node JS';
 
@@ -45,7 +46,21 @@ fileSystem.readFile('./txt/start.txt', 'utf-8', (err, data)=>{
 ///////////////////////////
 //SERVER
 http.createServer((req, res)=>{
-    res.end(`Hello from the server! Here is your path - ${req.url}`);
+    const pathName = req.url;
+    
+    if(req.url=='/' || req.url=='/overview'){
+        res.end('you are trying to reach overview page');
+    }
+    else if(req.url=='/product'){
+        res.end('you are trying to reach product page');
+    }
+    else {
+        res.writeHead(404, {//status code
+            'Content-type': 'text/html',//header
+            'my-custom-header': 'hello-world'//header
+        });
+        res.end('<h1>Page not found</h1>');
+    }
 }).listen(8000, '127.0.0.1', ()=>{ //port, host is current computer
     console.log('listening to requests on port 8000');
 });
