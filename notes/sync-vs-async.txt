@@ -1,0 +1,9 @@
+SYNC VS ASYNC
+
+Synchronous code can be bad if there's an operation that takes a long time. If it BLOCKS other code then your app will be slow.
+
+The answer is writing ASYNCHRONOUS CODE. Just DO IT. 
+
+Why do we use callbacks so much in Node.js❓ 
+👉 A Node.js process only has one thread, the machine's processor. All the users that access your application are using that single thread. If one user blocks the thread, then all the other users have to wait.
+
