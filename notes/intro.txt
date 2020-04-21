@@ -1,0 +1,23 @@
+NODE.JS
+
+Node.js is a JavaScript runtime built on Google's V8 engine that runs outside of a browser.
+
+Javascript on the Server:
+What this means is that if we have Node.js on the server, we can do lot's more cool stuff like access file structures, store data, better networking, fetch data, etc. 
+
+Lets use Node.js as a web server!!!!!
+
+Highly scalable applications that run natively in the browser!!!
+
+⚡⚡ NODE.JS AT A GLANCE ⚡⚡
+
+👉 Single-threaded, event driven, non-blocking 1/0 model 
+👉 Perfect for building fast and scalable data-intensive apps
+👉 Used by companies like Netflix, Uber, PayPal, Ebay, use Nodejs in production
+👉 Using Javascript across the entire stack makes for faster, more efficient development
+👉 Huge community
+    
+✅ Uses of Nodejs: Api with database, data streaming (like YouTube), Real time chat, server-side web app
+    
+⛔ Apps that would heavily use server-side processing (CPU intensive), like image conversion, video compression, etc. In that case, you want to use Rails, PHP, or Python.
+
