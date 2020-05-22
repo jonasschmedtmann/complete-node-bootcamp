@@ -1,0 +1,5 @@
+{
+  "singleQuote": true,
+  "tabWidth": 2, //tab space
+  "printWidth": 80 //width of a code line
+}
