@@ -48,7 +48,7 @@ If you want your editor to work and look exactly the same way as mine does in th
   "editor.minimap.enabled": true,
   "workbench.statusBar.visible": true,
   "workbench.activityBar.visible": true,
-  "editor.formatOnSave": false,
+  //"editor.formatOnSave": false,
   "editor.wordWrap": "on",
   "editor.trimAutoWhitespace": false,
   "eslint.run": "onSave",
