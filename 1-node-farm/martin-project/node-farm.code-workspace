@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../notes"
+		}
+	],
+	"settings": {
+		"editor.formatOnSave": true
+	}
+}

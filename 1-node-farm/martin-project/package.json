@@ -1,0 +1,27 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "Parsing templates with Node (no Express)",
+  "main": "index.js",
+  "dependencies": {
+    "slugify": "^1.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartinDM/Jonas-Node-Farm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MartinDM/Jonas-Node-Farm/issues"
+  },
+  "homepage": "https://github.com/MartinDM/Jonas-Node-Farm#readme"
+}
