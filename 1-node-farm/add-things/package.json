@@ -1,0 +1,16 @@
+{
+  "name": "add-things",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-session": "^1.4.0",
+    "form-data": "^3.0.0",
+    "request": "^2.88.2"
+  }
+}
