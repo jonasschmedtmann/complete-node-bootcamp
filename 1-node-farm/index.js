@@ -1,7 +1,11 @@
 const fs = require('fs');   //requires the file_system module
 const http = require('http') // gives us networking capability 
 const url = require('url'); // gives us routing capability 
+
+const slugify = require('slugify');
+
 const replaceTemplate = require('./modules/replaceTemplate');
+
 const { runInNewContext } = require('vm');
 const { resourceUsage } = require('process');
 
@@ -13,6 +17,12 @@ const tempProduct = fs.readFileSync(`${__dirname}/templates/template-product.htm
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
 const dataObj = JSON.parse(data);
 
+// 3rd party
+// console.log(slugify('Fresh Avocados', {lower: true })); // to test
+const slugs = dataObj.map(el => slugify(el.productName, { lower: true }));
+console.log(slugs);
+
+// create server
 const server = http.createServer((req, res) => {
     const { query, pathname } = url.parse(req.url, true);   
 
