@@ -17,7 +17,7 @@ exports.checkID = (req, res, next, val) => {
 };
 
 exports.checkBody = (req, res, next) => {
-  if (!req.body.name || !req.body.price) {
+  if (!("name" in req.body) || !("price" in req.body) {
     return res.status(400).json({
       status: 'fail',
       message: 'Missing name or price'
