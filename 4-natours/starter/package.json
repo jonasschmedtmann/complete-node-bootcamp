@@ -1,0 +1,15 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Learning node express and mongo db",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Eden",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  }
+}
