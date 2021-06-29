@@ -25,5 +25,8 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "prettier": "^2.3.2"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
