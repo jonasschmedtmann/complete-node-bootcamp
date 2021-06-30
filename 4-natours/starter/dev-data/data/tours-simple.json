@@ -133,7 +133,5 @@
     "imageCover": "tour-9-cover.jpg",
     "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"],
     "startDates": ["2021-12-16,10:00", "2022-01-16,10:00", "2022-12-12,10:00"]
-  },
-  { "id": 9, "name": "Test Tour", "duration": 10, "difficulty": "easy" },
-  { "id": 10, "name": "Test Tour", "duration": 10, "difficulty": "easy" }
+  }
 ]
