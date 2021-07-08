@@ -1,5 +1,4 @@
 class APIFeatures {
-  //query === query object, queryString === query parameters we get from the client - ?limit=5&sort=-ratingsAverage,price
   constructor(query, queryString) {
     this.query = query;
     this.queryString = queryString;
@@ -7,14 +6,15 @@ class APIFeatures {
 
   filter() {
     const queryObj = { ...this.queryString };
-    const excludedFileds = ['page', 'sort', 'limit', 'fields'];
-    excludedFileds.forEach((el) => delete queryObj[el]);
+    const excludedFields = ['page', 'sort', 'limit', 'fields'];
+    excludedFields.forEach(el => delete queryObj[el]);
 
-    //1B. Advanced filtering
+    // 1B) Advanced filtering
     let queryStr = JSON.stringify(queryObj);
-    queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
+    queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
 
     this.query = this.query.find(JSON.parse(queryStr));
+
     return this;
   }
 
@@ -41,14 +41,13 @@ class APIFeatures {
   }
 
   paginate() {
-    const page = this.queryString.page * 1 || 1; // 2
-    const limit = this.queryString.limit * 1 || 100; // 10
-    const skip = (page - 1) * limit; // 1 * 10
+    const page = this.queryString.page * 1 || 1;
+    const limit = this.queryString.limit * 1 || 100;
+    const skip = (page - 1) * limit;
 
     this.query = this.query.skip(skip).limit(limit);
 
     return this;
   }
 }
-
 module.exports = APIFeatures;
