@@ -6,3 +6,6 @@ Course Structure and Projects
 lecture 02.
 READ BEFORE YOU START! (I read everything)
 
+/////////////////////////////////////////////
+lecture 03.
+3. Let's Install Node.js (here i install the node js)
