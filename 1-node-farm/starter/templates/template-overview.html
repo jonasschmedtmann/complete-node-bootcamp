@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Megrim|Nunito+Sans:400,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/155/ear-of-maize_1f33d.png"
+    />
+
+    <title>NODE FARM</title>
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+
+      html {
+        font-size: 62.5%;
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 5rem 5rem 10rem;
+        line-height: 1.7;
+        font-family: "Nunito Sans", sans-serif;
+        color: #555;
+        min-height: 100vh;
+        background: linear-gradient(to bottom right, #9be15d, #00e3ae);
+      }
+
+      h1 {
+        font-family: "Megrim", sans-serif;
+        font-size: 6rem;
+        color: white;
+        transform: skewY(-5deg);
+        text-align: center;
+        position: relative;
+        word-spacing: 3px;
+      }
+
+      h1::before {
+        content: "";
+        display: block;
+        height: 65%;
+        width: 49%;
+        position: absolute;
+        top: 105%;
+        left: 50%;
+        background: linear-gradient(to bottom, #9be15d, #00e3ae);
+        opacity: 0.8;
+        z-index: -1;
+        transform: skewY(370deg) translate(-50%, -50%);
+      }
+
+      .container {
+        width: 95rem;
+        margin: 0 auto;
+      }
+
+      .cards-container {
+        margin-top: 8rem;
+      }
+
+      .card {
+        background: white;
+        box-shadow: 0 2rem 6rem 1rem rgba(0, 0, 0, 0.15);
+        margin-bottom: 5rem;
+        transform: skewX(-20deg);
+        display: flex;
+        transition: all 0.5s;
+      }
+
+      .card__emoji {
+        font-size: 5.5rem;
+        line-height: 1.2;
+        padding: 1.5rem 6rem 0.5rem 1.5rem;
+        letter-spacing: -4rem;
+        transform: skewX(20deg);
+      }
+
+      .card__title-box {
+        background: linear-gradient(to bottom, #9be15d, #00e3ae);
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        padding: 0 3rem;
+      }
+
+      .card__title {
+        font-family: "Megrim", sans-serif;
+        color: white;
+        font-size: 3.25rem;
+        transform: skewX(20deg);
+      }
+
+      .card__details {
+        display: flex;
+      }
+
+      .card__detail-box {
+        align-self: stretch;
+        border-right: 1px solid #ddd;
+        display: flex;
+        align-items: center;
+      }
+
+      .card__detail-box:last-child {
+        border: none;
+      }
+
+      .card__detail {
+        font-weight: 400;
+        font-size: 1.8rem;
+        transform: skewX(20deg);
+        padding: 1.75rem;
+      }
+
+      .card__detail--organic {
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 1.9rem;
+        background-image: linear-gradient(to right, #9be15d, #00e3ae);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .card__detail--price {
+        font-weight: 900;
+        font-size: 1.9rem;
+      }
+
+      .card__link:link,
+      .card__link:visited {
+        flex: 0 0 auto;
+        background-color: #79e17b;
+        color: white;
+        font-size: 1.6rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 2.5rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+      }
+
+      .card__link:hover,
+      .card__link:active {
+        background-color: #9be15d;
+      }
+
+      .card__link span {
+        transform: skewX(20deg);
+      }
+
+      .card:hover {
+        transform: skewX(-20deg) scale(1.08);
+        box-shadow: 0 3rem 8rem 2rem rgba(0, 0, 0, 0.15);
+      }
+
+      .emoji-left {
+        font-size: 2rem;
+        margin-right: 1rem;
+      }
+
+      .emoji-right {
+        font-size: 2rem;
+        margin-left: 1rem;
+      }
+
+      .not-organic {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>🌽 Node Farm 🥦</h1>
+
+      <div class="cards-container">{%PRODUCT_CARDS%}</div>
+    </div>
+  </body>
+</html>
