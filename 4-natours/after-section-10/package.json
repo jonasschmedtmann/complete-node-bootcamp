@@ -23,7 +23,7 @@
     "morgan": "^1.9.1",
     "nodemailer": "^6.1.1",
     "slugify": "^1.3.4",
-    "validator": "^10.11.0",
+    "validator": "^13.7.0",
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {
