@@ -1,0 +1,27 @@
+{
+  "name": "complete-node-bootcamp",
+  "version": "1.0.0",
+  "description": "This repo contains starter files and the finished project files for all the projects contained in the course (complete repo size is **288MB**).",
+  "main": "index.js",
+  "scripts": {
+    "serve": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gauravV123/complete-node-bootcamp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gauravV123/complete-node-bootcamp/issues"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "morgan": "^1.10.0",
+    "superagent": "^7.1.3"
+  },
+  "homepage": "https://github.com/gauravV123/complete-node-bootcamp#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
