@@ -33,22 +33,73 @@ const url = require("url");
 // Server
 //
 
+// Load templates into memory so they are not loaded on each request
+// Can use Sync here are we are running this once when the server starts,
+// if we did this in the request, it would block.
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf8");
+const tempOverview = fs.readFileSync(
+  `${__dirname}/templates/template-overview.html`,
+  "utf8"
+);
+const tempCard = fs.readFileSync(
+  `${__dirname}/templates/template-card.html`,
+  "utf8"
+);
+const templateProduct = fs.readFileSync(
+  `${__dirname}/templates/template-product.html`,
+  "utf8"
+);
 const dataObj = JSON.parse(data);
+
+const replaceTemplate = (temp, product) => {
+  output = temp.replace(/{%PRODUCTNAME%}/g, product.productName);
+  output = output.replace(/{%IMAGE%}/g, product.image);
+  output = output.replace(/{%PRICE%}/g, product.price);
+  output = output.replace(/{%FROM%}/g, product.from);
+  output = output.replace(/{%NUTRIENTS%}/g, product.nutrients);
+  output = output.replace(/{%QUANTITY%}/g, product.quantity);
+  output = output.replace(/{%DESCRIPTION%}/g, product.description);
+  output = output.replace(/{%ID%}/g, product.id);
+  output = output.replace(/{%PRODUCTWEIGHT%}/g, product.weight);
+
+  if (!product.organic) {
+    output = output.replace(/{%NOT_ORGANIC%}/g, "not-organic");
+  }
+  return output;
+};
 
 const server = http.createServer((req, res) => {
   const path = req.url;
 
+  // Overview page
   if (path === "/" || path === "/overview") {
-    res.end("This is the overview");
-  } else if (path === "/product") {
+    res.writeHead(200, {
+      "Content-type": "text/html",
+    });
+
+    const cardsHtml = dataObj
+      .map((el) => replaceTemplate(tempCard, el))
+      .join("");
+
+    const output = tempOverview.replace("{%PRODUCT_CARDS%}", cardsHtml);
+    res.end(output);
+  }
+
+  // Product page
+  else if (path === "/product") {
     res.end("This is the product");
-  } else if (path === "/api") {
+  }
+
+  // API
+  else if (path === "/api") {
     res.writeHead(200, {
       "Content-type": "application/json",
     });
     res.end(data);
-  } else {
+  }
+
+  // Not found
+  else {
     res.writeHead(404, {
       "Content-type": "text/html",
       "My-header": "Hello-world",
