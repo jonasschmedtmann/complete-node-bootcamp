@@ -1,16 +1,17 @@
 const fs = require("fs");
 const http = require("http");
 const url = require("url");
-//
-// // Blocking, scyncronus way
+
+// Here we use '.' for dir of current running mondule(file) instead of __dir
+const replaceTemplate = require("./modules/replaceTemplate");
+
+// Blocking, scyncronus way
 // const textIn = fs.readFileSync('./txt/input.txt', 'utf-8');
 // console.log(textIn);
 // const textOut = `This is hat we know about the avocado ${textIn}.\nCreated on ${Date.now()}`;
 // fs.writeFileSync('./txt/output.txt', textOut);
-//
 
 // Non-Blocking, asyncronous way
-
 // fs.readFile('./txt/start.txt', 'utf-8', (err, data1) => {
 //     if (err) return console.log('Error reading file');
 //     fs.readFile(`./txt/${data1}.txt`, 'utf-8', (err, data2) => {
@@ -27,16 +28,16 @@ const url = require("url");
 // });
 //
 // console.log('Will read this');
-
 ///////////////////////////////////////////////////////////////////////////////
 
 // Server
 //
-
 // Load templates into memory so they are not loaded on each request
 // Can use Sync here are we are running this once when the server starts,
 // if we did this in the request, it would block.
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf8");
+const dataObj = JSON.parse(data);
+
 const tempOverview = fs.readFileSync(
   `${__dirname}/templates/template-overview.html`,
   "utf8"
@@ -45,34 +46,16 @@ const tempCard = fs.readFileSync(
   `${__dirname}/templates/template-card.html`,
   "utf8"
 );
-const templateProduct = fs.readFileSync(
+const tempProduct = fs.readFileSync(
   `${__dirname}/templates/template-product.html`,
   "utf8"
 );
-const dataObj = JSON.parse(data);
-
-const replaceTemplate = (temp, product) => {
-  output = temp.replace(/{%PRODUCTNAME%}/g, product.productName);
-  output = output.replace(/{%IMAGE%}/g, product.image);
-  output = output.replace(/{%PRICE%}/g, product.price);
-  output = output.replace(/{%FROM%}/g, product.from);
-  output = output.replace(/{%NUTRIENTS%}/g, product.nutrients);
-  output = output.replace(/{%QUANTITY%}/g, product.quantity);
-  output = output.replace(/{%DESCRIPTION%}/g, product.description);
-  output = output.replace(/{%ID%}/g, product.id);
-  output = output.replace(/{%PRODUCTWEIGHT%}/g, product.weight);
-
-  if (!product.organic) {
-    output = output.replace(/{%NOT_ORGANIC%}/g, "not-organic");
-  }
-  return output;
-};
 
 const server = http.createServer((req, res) => {
-  const path = req.url;
+  const { query, pathname } = url.parse(req.url, true);
 
   // Overview page
-  if (path === "/" || path === "/overview") {
+  if (pathname === "/" || pathname === "/overview") {
     res.writeHead(200, {
       "Content-type": "text/html",
     });
@@ -86,12 +69,18 @@ const server = http.createServer((req, res) => {
   }
 
   // Product page
-  else if (path === "/product") {
-    res.end("This is the product");
+  else if (pathname === "/product") {
+    res.writeHead(200, {
+      "Content-type": "text/html",
+    });
+    const product = dataObj[query.id];
+    const output = replaceTemplate(tempProduct, product);
+
+    res.end(output);
   }
 
   // API
-  else if (path === "/api") {
+  else if (pathname === "/api") {
     res.writeHead(200, {
       "Content-type": "application/json",
     });
