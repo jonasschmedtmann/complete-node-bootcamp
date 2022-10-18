@@ -10,7 +10,7 @@ const replaceTemplate = require('./modules/replaceTemplate');
 
 
 ////////////////////////////////
-//FILESs
+//FILES
 
 
 ////////////////////////////////
