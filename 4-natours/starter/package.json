@@ -1,0 +1,19 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "node express and mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "marcoanicosta"
+  },
+  "author": "Marco Nafafe",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "prettier": "^2.7.1"
+  }
+}
