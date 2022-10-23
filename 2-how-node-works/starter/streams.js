@@ -21,6 +21,8 @@ server.on('request', (req, res) =>{
     //     res.statusCode = 500;
     //     res.end('File not found');
     // })
+    // events and methods
+
 
     //Solution 3
 
@@ -29,7 +31,7 @@ server.on('request', (req, res) =>{
     //readbaleSource.pipe(writeableDest) 
     // can be a duplex or transform but it needs to be writeable
 
-    
+
     
     
 });
