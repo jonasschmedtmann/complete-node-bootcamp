@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start:dev": "nodemon server.js",
+    "start:prod": "NODE_ENV=production nodemon server"
   },
   "repository": {
     "type": "git",
@@ -14,11 +15,20 @@
   "author": "Marco Nafafe",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "morgan": "^1.10.0",
-    "prettier": "^2.7.1"
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.7.1"
   }
 }
