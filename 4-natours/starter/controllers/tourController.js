@@ -1,15 +1,37 @@
+const { Linter } = require('eslint');
 const Tour = require('../models/tourModel');
 
 //ROUTE HANDLERS
 exports.getAllTours = async (req, res) => {
   try {
+    //BULD QUERY
+    //query string: filtering
+    //1A) filtering
     const queryObj = { ...req.query };
+    //array of all the fields to be excluded
     const excludedFields = ['page', 'sort', 'limit', 'fields'];
+    //remove all fields from query object over for each from elements of the arry
     excludedFields.forEach((el) => delete queryObj[el]);
 
-    console.log(req.query, queryObj);
-    const tours = await Tour.find(req.query);
+    //2B) Advanced filtering
+    let queryStr = JSON.stringify(queryObj);
+    queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
+    console.log(JSON.parse(queryStr));
 
+    let query = Tour.find(JSON.parse(queryStr));
+
+    // 2) Sorting
+    if (req.query.sort) {
+      const sortBy = req.query.sort.split(',').join(' ');
+      query = query.sort(sortBy);
+    } else {
+      query = query.sort('-createdAt');
+    }
+
+    //EXCUTE QUERY
+    const tours = await query;
+
+    //SEND RESPONSE
     res.status(200).json({
       status: 'success',
       rquestedAt: req.requestTime,
