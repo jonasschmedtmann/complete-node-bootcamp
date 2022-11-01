@@ -1,6 +1,11 @@
-const { Linter } = require('eslint');
-const { countDocuments } = require('../models/tourModel');
 const Tour = require('../models/tourModel');
+
+exports.aliasTopTours = (req, res, next) => {
+  req.query.limit = '5';
+  req.query.sort = '-ratingsAverage,price';
+  req.query.fields = 'name,price,ratingsAverage,summary,difficulty';
+  next();
+};
 
 //ROUTE HANDLERS
 exports.getAllTours = async (req, res) => {
