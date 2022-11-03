@@ -1,4 +1,5 @@
 const Tour = require('../models/tourModel');
+const APIFeatures = require('../utils/apiFeatures');
 
 exports.aliasTopTours = (req, res, next) => {
   req.query.limit = '5';
@@ -10,53 +11,13 @@ exports.aliasTopTours = (req, res, next) => {
 //ROUTE HANDLERS
 exports.getAllTours = async (req, res) => {
   try {
-    //BULD QUERY
-    //query string: filtering
-    //1A) filtering
-    const queryObj = { ...req.query };
-    //array of all the fields to be excluded
-    const excludedFields = ['page', 'sort', 'limit', 'fields'];
-    //remove all fields from query object over for each from elements of the arry
-    excludedFields.forEach((el) => delete queryObj[el]);
-
-    //2B) Advanced filtering
-    let queryStr = JSON.stringify(queryObj);
-    queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
-    console.log(JSON.parse(queryStr));
-
-    let query = Tour.find(JSON.parse(queryStr));
-
-    // 2) Sorting
-    if (req.query.sort) {
-      const sortBy = req.query.sort.split(',').join(' ');
-      query = query.sort(sortBy);
-    } else {
-      query = query.sort('-createdAt');
-    }
-
-    // 3. Field Limiting
-    if (req.query.fields) {
-      const fields = req.query.fields.split(',').join(' ');
-      query = query.select(fields);
-    } else {
-      query = query.select('-__v');
-    }
-
-    // 4. Pagination
-    //?page=1&limit=3
-    const page = req.query.page * 1 || 1;
-    const limit = req.query.page * 1 || 100;
-    const skip = (page - 1) * limit;
-    query = query.skip(skip).limit(limit);
-
-    //error when page doesn't exist
-    if (req.query.page) {
-      const numTours = await Tour.countDocuments();
-      if (skip >= numTours) throw new Error('This page doesnt exist');
-    }
-
     //EXCUTE QUERY
-    const tours = await query;
+    const features = new APIFeatures(Tour.find(), req.query)
+      .filter()
+      .sort()
+      .limitFields()
+      .pagination();
+    const tours = await features.query;
 
     //SEND RESPONSE
     res.status(200).json({
