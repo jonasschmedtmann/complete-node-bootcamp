@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon server.js",
-    "start:prod": "NODE_ENV=production nodemon server"
+    "start:prod": "NODE_ENV=production nodemon server",
+    "debug": "ndb server.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,9 @@
     "express": "^4.18.2",
     "mongoose": "^5.13.15",
     "morgan": "^1.10.0",
-    "slugify": "^1.6.5"
+    "ndb": "^1.1.5",
+    "slugify": "^1.6.5",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "eslint": "^8.26.0",
