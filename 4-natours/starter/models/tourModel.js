@@ -104,7 +104,7 @@ tourSchema.pre(/^find/, function (next) {
 //QUERY MIDDLEWARE: pos
 tourSchema.post(/^find/, function (doc, next) {
   console.log(`Query took ${Date.now() - this.start} milliseconds ⏲`);
-  console.log(docs);
+  console.log(doc);
   next();
 });
 
