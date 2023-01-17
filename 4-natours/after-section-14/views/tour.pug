@@ -58,8 +58,8 @@ block content
 
     .description-box
       h2.heading-secondary.ma-bt-lg= `About ${tour.name} tour`
-      - const parapraphs = tour.description.split('\n');
-      each p in parapraphs
+      - const paragraphs = tour.description.split('\n');
+      each p in paragraphs
         p.description__text= p
 
   section.section-pictures
