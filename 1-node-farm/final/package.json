@@ -1,6 +1,7 @@
 {
   "name": "node-farm",
   "version": "1.0.0",
+  "type": "module",
   "description": "Learning node.js",
   "main": "index.js",
   "scripts": {
