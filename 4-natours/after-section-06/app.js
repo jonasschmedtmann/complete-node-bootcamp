@@ -1,8 +1,13 @@
-const express = require('express');
-const morgan = require('morgan');
+import express from "express";
+import morgan from "morgan";
+import tourRouter from "./routes/tourRoutes";
+import userRouter from "./routes/userRoutes";
 
-const tourRouter = require('./routes/tourRoutes');
-const userRouter = require('./routes/userRoutes');
+// const express = require( 'express' );
+// const morgan = require('morgan');
+
+// const tourRouter = require('./routes/tourRoutes');
+// const userRouter = require('./routes/userRoutes');
 
 const app = express();
 
