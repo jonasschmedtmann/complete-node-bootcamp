@@ -31,6 +31,10 @@ console.log("Will read file!");
 */
 
 //////////////////////////SERVER///////////////////////
+//Top-level code (outside the callback functions) - Called only once when the code starts
+const data = fs.readFileSync(__dirname + "/dev-data/data.json", "utf-8");
+const dataObj = JSON.parse(data);
+
 const server = http.createServer((req, res) => {
   console.log(req.url); // http://127.0.0.1:8000/overview?id=12&abc=567 req.url=/overview?id=12&abc=567
 
@@ -40,13 +44,16 @@ const server = http.createServer((req, res) => {
     res.end("This is the Overview");
   } else if (pathName === "/product") {
     res.end("This is the Product");
+  } else if (pathName === "/api") {
+    res.writeHead(200, { "Content-type": "application/json" });
+    res.end(data);
   } else {
     res.writeHead(404, {
       "Content-type": "text.html",
-      'my-own-header': 'hello-world'
+      "my-own-header": "hello-world",
     }); //appears in the network tab
     //Response headers must be always set up before sending the response
-    //They provide you more information about response (eg: location or server providing it) 
+    //They provide you more information about response (eg: location or server providing it)
     res.end("<h1>Page not found!</h1>");
   }
 });
