@@ -21,13 +21,20 @@ const sendEmail = async option => {
   }
 
   // SEND THE EMAIL..
-  try {
-    await transport.sendMail(mailOption);
-    console.log("The email has been sent!");
-  } catch (error) {
-    console.error(error);
-  }
-}
 
-// this is the cause that you have made this so far..
-module.exports = sendEmail;
+  await transport.sendMail(mailOption);
+
+  // this is the cause that you have made this so far..
+  module.exports = sendEmail;
+
+
+
+
+
+  // // SEND THE EMAIL..
+  // try {
+  //   await transport.sendMail(mailOption);
+  //   console.log("The email has been sent!");
+  // } catch (error) {
+  //   console.error(error);
+  // }
