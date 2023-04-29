@@ -14,7 +14,7 @@ router
 
 router
   .post('/forgotPassword', forgotPassword)
-// .patch('/resetPassword/:token', resetPassword)
+  .patch('/resetPassword/:token', resetPassword)
 
 // Users....
 router
