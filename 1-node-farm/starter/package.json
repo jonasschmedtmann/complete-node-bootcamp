@@ -1,0 +1,17 @@
+{
+  "name": "node-farm",
+  "version": "1.0.0",
+  "description": "node js tutorial",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Azouz",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "slugify": "^1.6.6"
+  }
+}
