@@ -1,4 +1,4 @@
-// Connecting a module
+// Connecting a module 
 const fs = require('fs'); // fs = file system
 
 // Reading a file (blocking)
