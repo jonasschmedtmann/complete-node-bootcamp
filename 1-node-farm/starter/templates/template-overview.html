@@ -32,14 +32,14 @@
       body {
         padding: 5rem 5rem 10rem;
         line-height: 1.7;
-        font-family: 'Nunito Sans', sans-serif;
+        font-family: "Nunito Sans", sans-serif;
         color: #555;
         min-height: 100vh;
         background: linear-gradient(to bottom right, #9be15d, #00e3ae);
       }
 
       h1 {
-        font-family: 'Megrim', sans-serif;
+        font-family: "Megrim", sans-serif;
         font-size: 6rem;
         color: white;
         transform: skewY(-5deg);
@@ -49,7 +49,7 @@
       }
 
       h1::before {
-        content: '';
+        content: "";
         display: block;
         height: 65%;
         width: 49%;
@@ -97,7 +97,7 @@
       }
 
       .card__title {
-        font-family: 'Megrim', sans-serif;
+        font-family: "Megrim", sans-serif;
         color: white;
         font-size: 3.25rem;
         transform: skewX(20deg);
@@ -191,125 +191,7 @@
     <div class="container">
       <h1>🌽 Node Farm 🥦</h1>
 
-      <div class="cards-container">
-        <figure class="card">
-          <div class="card__emoji">🥑🥑</div>
-
-          <div class="card__title-box">
-            <h2 class="card__title">Fresh Avocado</h2>
-          </div>
-
-          <div class="card__details">
-            <div class="card__detail-box">
-              <h6 class="card__detail card__detail--organic">Organic!</h6>
-            </div>
-
-            <div class="card__detail-box">
-              <h6 class="card__detail">4 🥑 per 📦</h6>
-            </div>
-
-            <div class="card__detail-box">
-              <h6 class="card__detail card__detail--price">6.50€</h6>
-            </div>
-          </div>
-
-          <a class="card__link" href="#">
-            <span>Detail <i class="emoji-right">👉</i></span>
-          </a>
-        </figure>
-
-        <figure class="card">
-          <div class="card__emoji">🧀🧀</div>
-          <div class="card__title-box">
-            <h2 class="card__title">Goat and Sheep Cheese</h2>
-          </div>
-
-          <div class="card__details">
-            <div class="card__detail-box">
-              <h6 class="card__detail">250g per 📦</h6>
-            </div>
-
-            <div class="card__detail-box">
-              <h6 class="card__detail card__detail--price">5.00€</h6>
-            </div>
-          </div>
-
-          <a class="card__link" href="#">
-            <span>Detail <i class="emoji-right">👉</i></span>
-          </a>
-        </figure>
-
-        <figure class="card">
-          <div class="card__emoji">🥦🥦</div>
-          <div class="card__title-box">
-            <h2 class="card__title">Apollo Broccoli</h2>
-          </div>
-
-          <div class="card__details">
-            <div class="card__detail-box">
-              <h6 class="card__detail card__detail--organic">Organic!</h6>
-            </div>
-
-            <div class="card__detail-box">
-              <h6 class="card__detail">3 🥦 per 📦</h6>
-            </div>
-
-            <div class="card__detail-box">
-              <h6 class="card__detail card__detail--price">5.50€</h6>
-            </div>
-          </div>
-
-          <a class="card__link" href="#">
-            <span>Detail <i class="emoji-right">👉</i></span>
-          </a>
-        </figure>
-
-        <figure class="card">
-          <div class="card__emoji">🥕🥕</div>
-          <div class="card__title-box">
-            <h2 class="card__title">Baby Carrots</h2>
-          </div>
-
-          <div class="card__details">
-            <div class="card__detail-box">
-              <h6 class="card__detail card__detail--organic">Organic!</h6>
-            </div>
-
-            <div class="card__detail-box">
-              <h6 class="card__detail">20 🥕 per 📦</h6>
-            </div>
-
-            <div class="card__detail-box">
-              <h6 class="card__detail card__detail--price">3.00€</h6>
-            </div>
-          </div>
-
-          <a class="card__link" href="#">
-            <span>Detail <i class="emoji-right">👉</i></span>
-          </a>
-        </figure>
-
-        <figure class="card">
-          <div class="card__emoji">🌽🌽</div>
-          <div class="card__title-box">
-            <h2 class="card__title">Sweet Corncobs</h2>
-          </div>
-
-          <div class="card__details">
-            <div class="card__detail-box">
-              <h6 class="card__detail">2 🌽 per 📦</h6>
-            </div>
-
-            <div class="card__detail-box">
-              <h6 class="card__detail card__detail--price">2.00€</h6>
-            </div>
-          </div>
-
-          <a class="card__link" href="#">
-            <span>Detail <i class="emoji-right">👉</i></span>
-          </a>
-        </figure>
-      </div>
+      <div class="cards-container">{%PRODUCT_CARDS%}</div>
     </div>
   </body>
 </html>
