@@ -6,7 +6,7 @@ const replaceTemplate = require('./modules/replaceTemplate');
 
 /////////////////////////////////
 // FILES
-
+ 
 // Blocking, synchronous way
 // const textIn = fs.readFileSync('./txt/input.txt', 'utf-8');
 // console.log(textIn);
