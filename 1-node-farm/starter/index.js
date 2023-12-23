@@ -42,6 +42,14 @@ const server = http.createServer((req, resp) => {
     else if (pathName === "/product") {
         resp.end("Product");
     }
+    else if (pathName === "/api") {
+        fs.readFile(`${__dirname}/dev-data/data.json`, "utf-8", (err, data) => {
+            const prd_data = JSON.parse(data);
+            console.log(prd_data);
+            resp.writeHead(200, { "content-type": "application/json" }); // if you don't send application/json, it is not parsed accurately
+            resp.end(data);
+        });
+    }
     else {
         resp.writeHead(404, {
             "Content-type": "text/html",
