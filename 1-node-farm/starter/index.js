@@ -42,7 +42,7 @@ const replaceTemplate = (temp, prd) => {
     output = output.replace(/{%DESCRIPTION%}/g, prd.desctiption);
 
     if (!prd.organic) {
-        output.replace(/{%NOT_ORGANIC%}/g, 'not-organic');
+        output = output.replace(/{%NOT_ORGANIC%}/g, 'not-organic');
     }
     return output;
 }
