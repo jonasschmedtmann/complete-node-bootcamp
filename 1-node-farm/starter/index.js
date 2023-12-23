@@ -30,33 +30,60 @@ const url = require("url");
 
 //////////////////////////////////////////////////////////////////////////////////////
 // SERVER
-const file_data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8", (err, data) => { });
-const prd_data = JSON.parse(file_data);
-console.log(prd_data);
+
+const replaceTemplate = (temp, prd) => {
+    let output = temp.replace(/{%PRODUCTNAME%}/g, prd.productName);
+    output = output.replace(/{%PRICE%}/g, prd.price);
+    output = output.replace(/{%IMAGE%}/g, prd.image);
+    output = output.replace(/{%QUANTITY%}/g, prd.quantity);
+    output = output.replace(/{%PRODUCTID%}/g, prd.id);
+    output = output.replace(/{%SOURCEDFROM%}/g, prd.from);
+    output = output.replace(/{%NUTRIENTS%}/g, prd.nutrients);
+    output = output.replace(/{%DESCRIPTION%}/g, prd.desctiption);
+
+    if (!prd.organic) {
+        output.replace(/{%NOT_ORGANIC%}/g, 'not-organic');
+    }
+    return output;
+}
+
+// read data
+const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8", (err, data) => { });
+const dataObj = JSON.parse(data);
+
+// read template pages
+const templateCard = fs.readFileSync(`${__dirname}/templates/template-card.html`, "utf-8", (err, data) => { });
+const templateOverview = fs.readFileSync(`${__dirname}/templates/template-overview.html`, "utf-8", (err, data) => { });
+const templatePrd = fs.readFileSync(`${__dirname}/templates/template-product.html`, "utf-8", (err, data) => { });
 
 
 const server = http.createServer((req, resp) => {
     const pathName = req.url;
-    if (pathName === "/") {
-        resp.end("landing");
+    // overview
+    if (pathName === "/" || pathName === "/overview") {
+        resp.writeHead(200, { "content-type": "text/html" });
+        const cardsHtml = dataObj.map(el => replaceTemplate(templateCard, el)).join('');
+        const output = templateOverview.replace(/{%PRODUCT_CARDS%}/g, cardsHtml);
+        resp.end(output);
     }
-    else if (pathName === "/overview") {
-        resp.end("Overview");
-    }
-    else if (pathName === "/product") {
-        resp.end("Product");
-    }
-    else if (pathName === "/api") {
-        resp.writeHead(200, { "content-type": "application/json" });
-        resp.end(file_data);
-    }
-    else {
-        resp.writeHead(404, {
-            "Content-type": "text/html",
-            "my-own-header": "my head hurts"
-        });
-        resp.end("<h1>Whoops baby what did you do?</h1>");
-    }
+
+
+
+
+    // products
+
+
+
+
+
+    // api
+
+
+
+
+
+    // not found - 404
+
     // console.log(req.url)
     // console.log(req);
 });
