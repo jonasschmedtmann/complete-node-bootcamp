@@ -39,8 +39,7 @@ const replaceTemplate = (temp, prd) => {
     output = output.replace(/{%PRODUCTID%}/g, prd.id);
     output = output.replace(/{%SOURCEDFROM%}/g, prd.from);
     output = output.replace(/{%NUTRIENTS%}/g, prd.nutrients);
-    output = output.replace(/{%DESCRIPTION%}/g, prd.desctiption);
-
+    output = output.replace(/{%DESCRIPTION%}/g, prd.description);
     if (!prd.organic) {
         output = output.replace(/{%NOT_ORGANIC%}/g, 'not-organic');
     }
@@ -58,15 +57,27 @@ const templatePrd = fs.readFileSync(`${__dirname}/templates/template-product.htm
 
 
 const server = http.createServer((req, resp) => {
-    const pathName = req.url;
+    const { query, pathname } = url.parse(req.url, true);
     // overview
-    if (pathName === "/" || pathName === "/overview") {
+    if (pathname === "/" || pathname === "/overview") {
         resp.writeHead(200, { "content-type": "text/html" });
         const cardsHtml = dataObj.map(el => replaceTemplate(templateCard, el)).join('');
         const output = templateOverview.replace(/{%PRODUCT_CARDS%}/g, cardsHtml);
         resp.end(output);
     }
-
+    else if (pathname === "/product") {
+        const prd = dataObj[query.id];
+        resp.writeHead(200, { "content-type": "text/html" });
+        const output = replaceTemplate(templatePrd, prd);
+        resp.end(output);
+    }
+    else {
+        resp.writeHead(404, {
+            "Content-type": "text/html",
+            "my-own-header": "my head hurts"
+        });
+        resp.end("<h1>Whoops baby what did you do?</h1>");
+    }
 
 
 
