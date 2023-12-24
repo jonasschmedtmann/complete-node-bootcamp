@@ -1,6 +1,7 @@
 const fs = require("fs");
 const http = require("http");
 const url = require("url");
+const replaceTemplate = require("./modules/replaceTemplate")
 
 //////////////////////////////////////////////////////////////////////////////////////
 // FILES
@@ -31,20 +32,20 @@ const url = require("url");
 //////////////////////////////////////////////////////////////////////////////////////
 // SERVER
 
-const replaceTemplate = (temp, prd) => {
-    let output = temp.replace(/{%PRODUCTNAME%}/g, prd.productName);
-    output = output.replace(/{%PRICE%}/g, prd.price);
-    output = output.replace(/{%IMAGE%}/g, prd.image);
-    output = output.replace(/{%QUANTITY%}/g, prd.quantity);
-    output = output.replace(/{%PRODUCTID%}/g, prd.id);
-    output = output.replace(/{%SOURCEDFROM%}/g, prd.from);
-    output = output.replace(/{%NUTRIENTS%}/g, prd.nutrients);
-    output = output.replace(/{%DESCRIPTION%}/g, prd.description);
-    if (!prd.organic) {
-        output = output.replace(/{%NOT_ORGANIC%}/g, 'not-organic');
-    }
-    return output;
-}
+// const replaceTemplate = (temp, prd) => {
+//     let output = temp.replace(/{%PRODUCTNAME%}/g, prd.productName);
+//     output = output.replace(/{%PRICE%}/g, prd.price);
+//     output = output.replace(/{%IMAGE%}/g, prd.image);
+//     output = output.replace(/{%QUANTITY%}/g, prd.quantity);
+//     output = output.replace(/{%PRODUCTID%}/g, prd.id);
+//     output = output.replace(/{%SOURCEDFROM%}/g, prd.from);
+//     output = output.replace(/{%NUTRIENTS%}/g, prd.nutrients);
+//     output = output.replace(/{%DESCRIPTION%}/g, prd.description);
+//     if (!prd.organic) {
+//         output = output.replace(/{%NOT_ORGANIC%}/g, 'not-organic');
+//     }
+//     return output;
+// }
 
 // read data
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8", (err, data) => { });
