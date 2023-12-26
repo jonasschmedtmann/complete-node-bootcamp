@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: remove rakefile
+desc: remove rakefile in favor of makefile.  Currently, there is both a rakefile & makefile.
+type: :task
+component: ndb
+release: 
+reporter: Scott Taylor <scott@railsnewbie.com>
+status: :unstarted
+disposition: 
+creation_time: 2010-05-30 05:38:29.111993 Z
+references: []
+
+id: cf5776071382766d9b1a8138764f61803bd89187
+log_events: 
+- - 2010-05-30 05:38:30.063909 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - created
+  - ""

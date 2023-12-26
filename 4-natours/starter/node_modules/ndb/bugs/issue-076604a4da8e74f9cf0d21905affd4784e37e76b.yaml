@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Add installation documentation
+desc: Add installation documentation.  Check email to Mario Aquino <mario.e.aquino@gmail.com> for beginnings of documentation.
+type: :task
+component: ndb
+release: 
+reporter: Scott Taylor <scott@railsnewbie.com>
+status: :unstarted
+disposition: 
+creation_time: 2010-06-02 11:51:25.662099 Z
+references: []
+
+id: 076604a4da8e74f9cf0d21905affd4784e37e76b
+log_events: 
+- - 2010-06-02 11:51:27.173988 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - created
+  - ""

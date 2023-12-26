@@ -1,0 +1,29 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: more version info
+desc: |-
+  add more version info:
+  - remote v8 version (taken from the first connection)
+  - node remote version
+type: :feature
+component: ndb
+release: 
+reporter: Scott Taylor <scott@railsnewbie.com>
+status: :unstarted
+disposition: 
+creation_time: 2010-04-14 06:21:47.629233 Z
+references: []
+
+id: 1d6c2ce3dabebc58914f1e59c0c035d77cf9893e
+log_events: 
+- - 2010-04-14 06:21:49.948082 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - created
+  - ""
+- - 2010-04-14 06:41:56.558347 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - assigned to release 0.1.2 from unassigned
+  - ""
+- - 2010-04-27 07:52:13.270085 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - unassigned from release 0.1.2
+  - ""

@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<script src="/spec/support/jquery.js"></script>
+		<script src="/jspec/jspec.js"></script>
+		<script src="/jspec/jspec.jquery.js"></script>
+		<script src="/jspec/jspec.xhr.js"></script>
+		<script src="/spec/helpers.js"></script>
+		<script src="/spec/unit/spec.grammar-less.js"></script>
+		<script>
+			function runSuites() {
+				JSpec
+				.exec('/spec/unit/spec.grammar.js')
+				.exec('/spec/unit/spec.js')
+				.exec('/spec/unit/spec.matchers.js')
+				.exec('/spec/unit/spec.utils.js')
+				.exec('/spec/unit/spec.fixtures.js')
+				.exec('/spec/unit/spec.shared-behaviors.js')
+				.exec('/spec/unit/spec.jquery.js')
+				.exec('/spec/unit/spec.modules.js')
+				.exec('/spec/unit/spec.xhr.js')
+				.exec('/spec/unit/spec.jquery.xhr.js')
+				.run({ reporter: JSpec.reporters.Server, fixturePath: '/spec/fixtures' })
+				.report()
+			}
+		</script>
+	</head>
+	<body class="jspec" onLoad="runSuites();">
+	</body>
+</html>

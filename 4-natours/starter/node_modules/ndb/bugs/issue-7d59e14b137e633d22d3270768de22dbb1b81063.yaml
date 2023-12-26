@@ -1,0 +1,20 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Use readline's history instead of custom history
+desc: |-
+  Once readline support is baked in (ditz issue {issue 81f88ce897f0af5fb45a26f67e510acb59350066}), we should remove our history support and rely on the native readline
+  history support
+type: :feature
+component: ndb
+release: 
+reporter: Scott Taylor <scott@railsnewbie.com>
+status: :unstarted
+disposition: 
+creation_time: 2010-06-11 15:08:48.952023 Z
+references: []
+
+id: 7d59e14b137e633d22d3270768de22dbb1b81063
+log_events: 
+- - 2010-06-11 15:08:49.887882 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - created
+  - ""

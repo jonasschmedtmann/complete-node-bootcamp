@@ -1,0 +1,16 @@
+exports.List          = require("./commands/list");
+exports.RawWrite      = require("./commands/raw_write");
+exports.Help          = require("./commands/help");
+exports.SetBreakpoint = require("./commands/setbreakpoint");
+exports.Break         = require("./commands/break");
+exports.Continue      = require("./commands/continue");
+exports.Next          = require("./commands/next");
+exports.Evaluate      = require("./commands/evaluate");
+exports.Quit          = require("./commands/quit");
+exports.Version       = require("./commands/version");
+exports.Verbose       = require("./commands/verbose");
+exports.Backtrace     = require("./commands/backtrace");
+exports.StepIn        = require("./commands/step_in");
+exports.StepOut       = require("./commands/step_out");
+exports.History       = require("./commands/history");
+exports.REPL          = require("./commands/repl");

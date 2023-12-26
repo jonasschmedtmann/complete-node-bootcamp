@@ -1,0 +1,11 @@
+
+  #00 #<an Object>.[anonymous](exports=#<an Object>, require=function require(path) {
+    return loadModule(path, self);
+  }, module=#<a Module>, __filename=/Users/scotttaylor/src/git/ndb/spec/node.js, __dirname=/Users/scotttaylor/src/git/ndb/spec) /Users/scotttaylor/src/git/ndb/spec/node.js line 4 column 1 (position 149)
+  #01 #<a Module>._compile(content=require.paths.unshift("./lib/");
+
+require("./jspec_dot_reporter/jspec_dot_report... (length: 1374), filename=/Users/scotttaylor/src/git/ndb/spec/node.js) module line 384 column 23 (position 9266)
+  #02 #<a Module>._loadScriptSync(filename=/Users/scotttaylor/src/git/ndb/spec/node.js) module line 393 column 16 (position 9517)
+  #03 #<a Module>.loadSync(filename=/Users/scotttaylor/src/git/ndb/spec/node.js) module line 296 column 10 (position 7159)
+  #04 #<an Object>.runMain() module line 459 column 22 (position 11106)
+  #05 [anonymous](process=#<an EventEmitter>) node.js line 168 column 8 (position 4677)

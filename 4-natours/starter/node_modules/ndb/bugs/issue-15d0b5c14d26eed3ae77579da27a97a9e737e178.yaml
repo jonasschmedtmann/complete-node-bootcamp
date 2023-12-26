@@ -1,0 +1,34 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: backtrace
+desc: bt/backtrace doesn't output anything at all.  It should be smart and show file & line no's
+type: :feature
+component: ndb
+release: 0.1.4
+reporter: Scott Taylor <scott@railsnewbie.com>
+status: :closed
+disposition: :fixed
+creation_time: 2010-04-14 06:08:41.522552 Z
+references: []
+
+id: 15d0b5c14d26eed3ae77579da27a97a9e737e178
+log_events: 
+- - 2010-04-14 06:08:46.314303 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - created
+  - ""
+- - 2010-04-14 06:41:10.424713 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - assigned to release 0.1.2 from unassigned
+  - ""
+- - 2010-04-27 07:52:08.820597 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - unassigned from release 0.1.2
+  - ""
+- - 2010-05-16 08:20:46.534851 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - closed with disposition fixed
+  - See e189c119b61c13f64214ec4d8c49917bb5194e2b
+- - 2010-05-16 22:50:36.890060 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - assigned to release 0.1.4 from unassigned
+  - ""

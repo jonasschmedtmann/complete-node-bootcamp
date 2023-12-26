@@ -1,0 +1,22 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Document --local
+desc: Add --local documentation in readme.
+type: :task
+component: ndb
+release: 0.1.4
+reporter: Scott Taylor <scott@railsnewbie.com>
+status: :closed
+disposition: :fixed
+creation_time: 2010-05-17 06:16:58.557937 Z
+references: []
+
+id: 4d556abcd314ded02d84d205f2f00c80c20cd947
+log_events: 
+- - 2010-05-17 06:16:59.462143 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - created
+  - ""
+- - 2010-05-20 05:38:44.479053 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - closed with disposition fixed
+  - ""

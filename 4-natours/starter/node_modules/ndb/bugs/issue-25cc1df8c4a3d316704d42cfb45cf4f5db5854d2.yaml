@@ -1,0 +1,30 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: update version number
+desc: Update version number for 0.1.2 release (0.1.1 is lies)
+type: :task
+component: ndb
+release: 0.1.3
+reporter: Scott Taylor <scott@railsnewbie.com>
+status: :closed
+disposition: :fixed
+creation_time: 2010-04-14 06:43:31.736670 Z
+references: []
+
+id: 25cc1df8c4a3d316704d42cfb45cf4f5db5854d2
+log_events: 
+- - 2010-04-14 06:43:33.384428 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - created
+  - ""
+- - 2010-04-27 07:52:29.307324 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - unassigned from release 0.1.2
+  - ""
+- - 2010-05-14 06:50:55.178072 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - closed with disposition fixed
+  - ""
+- - 2010-05-14 06:55:21.809308 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - assigned to release 0.1.3 from unassigned
+  - ""

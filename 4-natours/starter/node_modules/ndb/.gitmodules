@@ -1,0 +1,12 @@
+[submodule "spec/espionage"]
+	path = spec/espionage
+	url = git://github.com/smtlaissezfaire/espionage.git
+[submodule "spec/underscore"]
+	path = spec/underscore
+	url = git://github.com/documentcloud/underscore.git
+[submodule "spec/jspec"]
+	path = spec/jspec
+	url = git://github.com/visionmedia/jspec.git
+[submodule "spec/jspec_dot_reporter"]
+	path = spec/jspec_dot_reporter
+	url = git://github.com/smtlaissezfaire/jspec_dot_reporter.git

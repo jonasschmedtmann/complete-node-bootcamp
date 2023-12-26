@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Chrome integration
+desc: It would be super nice to have chrome integration.
+type: :feature
+component: ndb
+release: 
+reporter: Scott Taylor <scott@railsnewbie.com>
+status: :unstarted
+disposition: 
+creation_time: 2010-04-14 06:28:18.709278 Z
+references: []
+
+id: b9e9f0bc319918f4f6fc9e6a7dcb3f24da0c4885
+log_events: 
+- - 2010-04-14 06:29:25.177678 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - created
+  - There's absolutely no reason (in the abstract) why it couldn't be done, although investigation will need to occur to see if Chrome will run a hook into v8 with an external port.

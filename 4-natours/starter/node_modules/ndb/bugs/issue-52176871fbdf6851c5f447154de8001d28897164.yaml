@@ -1,0 +1,26 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: set host
+desc: host should default to localhost, but be settable with --host <hostname/ip>
+type: :feature
+component: ndb
+release: 0.1.4
+reporter: Scott Taylor <scott@railsnewbie.com>
+status: :closed
+disposition: :fixed
+creation_time: 2010-05-16 19:08:09.548552 Z
+references: []
+
+id: 52176871fbdf6851c5f447154de8001d28897164
+log_events: 
+- - 2010-05-16 19:08:10.524514 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - created
+  - ""
+- - 2010-05-16 19:16:37.592342 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - closed with disposition fixed
+  - ""
+- - 2010-05-16 22:50:19.957607 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - assigned to release 0.1.4 from unassigned
+  - ""

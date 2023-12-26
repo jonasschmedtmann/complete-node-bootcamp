@@ -1,0 +1,26 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: repl
+desc: It would be really nice to have a repl
+type: :feature
+component: ndb
+release: 0.1.5
+reporter: Scott Taylor <scott@railsnewbie.com>
+status: :closed
+disposition: :fixed
+creation_time: 2010-04-14 06:20:51.215478 Z
+references: []
+
+id: ab0738bb06ef3b545497991dcaa257a57aa5bce6
+log_events: 
+- - 2010-04-14 06:20:52.743426 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - created
+  - ""
+- - 2010-05-30 05:17:23.031295 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - closed with disposition fixed
+  - ""
+- - 2010-05-30 06:07:34.582341 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - assigned to release 0.1.5 from unassigned
+  - ""

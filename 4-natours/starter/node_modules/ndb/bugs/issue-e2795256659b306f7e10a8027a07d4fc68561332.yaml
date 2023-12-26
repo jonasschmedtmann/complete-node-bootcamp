@@ -1,0 +1,27 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: list command consistency
+desc: |-
+  the list command should consistenly follow other gdb like debuggers:
+  
+  "l" should print the current line.  Invoking it a second time should show the next X lines
+  "l=" should always print the current line
+  "l+" should show the next set of lines (as if invoking l for a second time)
+  "l+X" should show the next X lines of input
+  "l-X" should do the same, but in reverse
+  "l 1-100" should show lines 1-100
+  "l 10" should print as if on line 10
+type: :feature
+component: ndb
+release: 
+reporter: Scott Taylor <scott@railsnewbie.com>
+status: :unstarted
+disposition: 
+creation_time: 2010-04-14 06:19:49.907138 Z
+references: []
+
+id: e2795256659b306f7e10a8027a07d4fc68561332
+log_events: 
+- - 2010-04-14 06:19:52.852292 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - created
+  - ""

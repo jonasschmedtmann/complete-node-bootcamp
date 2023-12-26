@@ -1,0 +1,182 @@
+#!/usr/bin/env ruby
+
+JSPEC_ROOT = File.expand_path File.join(File.dirname(__FILE__), '..')
+$:.unshift JSPEC_ROOT
+
+require 'rubygems'
+require 'commander/import'
+require 'bind'
+require 'fileutils'
+require 'src/project'
+require 'src/installables'
+require 'src/server'
+
+program :name, 'JSpec'
+program :version, '4.3.2'
+program :description, 'JavaScript BDD Testing Framework'
+default_command :bind
+
+JSpec::Project.load_commands_at '~/.jspec/commands'
+JSpec::Project.load_commands_at 'spec/commands'
+JSpec::Project.load_commands_at 'jspec/commands'
+
+command :stats do |c|
+  c.syntax = 'jspec stats [path ...]'
+  c.summary = 'View javascript source statistics'
+  c.description = 'View statistics for the given [paths], defaulting to /lib/**/*.js'
+  c.example 'View stats for all /lib javascript', 'jspec stats'
+  c.example 'View stats for all /public/javascript files', 'jspec stats public/javascript/*.js'
+  c.when_called do |paths, options|
+    paths = Dir['lib/**/*.js'] if paths.empty?
+    paths.each do |path|
+      contents = File.read path
+      say "%33s : \n" % $terminal.color(path, :bold)
+      say "%25s : %0.2f KiB\n" % ['size', File.size(path).to_f / 1024] 
+      say "%25s : %d\n" % ['lines', contents.to_a.length] 
+      say "%25s : %d\n" % ['comments', contents.scan(/\/\*.*?\*\/|\/\/.*?$/m).length] 
+      say "%25s : %d\n" % ['functions', contents.scan(/function/i).length] 
+      say "%25s : %d\n" % ['vars', contents.scan(/\bvar\b/).length]
+      say "\n"
+    end
+  end
+end
+
+command :install do |c|
+  c.syntax = 'jspec install <project> [dest]'
+  c.summary = 'Install a project such as jQuery, Prototype, Rhino, etc.'
+  c.description = 'Install the given <project> to [dest] or spec/support/<project>.
+    When --release is not specified, the latest stable release will be used.
+    Currently the following projects are supported:
+
+      - jquery
+      - jqueryui
+      - prototype
+      - mootools
+      - dojo
+      - envjs (--release not yet supported)
+      - rhino (--release not yet supported)'
+  c.option '-r', '--release STRING', 'Release version to install'
+  c.example 'Install jQuery to spec/support/jquery.js', 'jspec install jquery'
+  c.example 'Install jQuery 1.3.0 to spec/support/jquery.js', 'jspec install jquery --release 1.3.0'
+  c.example 'Install Prototype to spec/prototype.js', 'jspec install prototype spec'
+  c.example 'Install Prototype to spec/vendor/prototype.js', 'jspec install prototype spec/vendor'
+  c.when_called do |args, options|
+    name = args.shift or raise 'Project name required'
+    project = JSpec::Project.for '.'
+    if dest = args.shift
+      project.install name, :to => dest, :release => options.release
+    else
+      Dir.mkdir project.normalize('support') unless File.directory? project.normalize('support')
+      project.install name, :to => project.normalize('support'), :release => options.release
+    end
+  end
+end
+
+command :init do |c|
+  c.syntax = 'jspec init [dest]'
+  c.summary = 'Initialize a JSpec project template'
+  c.description = 'Initialize a JSpec project template. Defaults to the current directory
+    when [dest] is not specified. The template includes several files for 
+    running via Rhino, DOM, and the JSpec Rack server.
+    
+    JSpec is also packed with a nodejs template via --node, omitting all of the 
+    unnecessary browser related files.
+    
+    Additional switches --freeze, and --symlink are available in order
+    to preserve the version of JSpec at the time of initialization. Otherwise
+    incompatibilities from later versions may prevent your suite from
+    running properly.
+    
+    To update a project to the recent version of JSpec use
+    `jspec help udpate` for more information.'
+  c.option '-n', '--node', 'Initialize nodejs template'
+  c.option '-R', '--rails', 'Initialize rails template from rails root directory'
+  c.option '-f', '--freeze', 'Copy the JSpec library'
+  c.option '-s', '--symlink', 'Symlink the JSpec library instead of copying it'
+  c.example 'Create a project in the current directory', 'jspec init'
+  c.example 'Create a directory foo, initialized with a jspec template', 'jspec init foo'
+  c.example 'Rails application support', 'jspec init --rails'
+  c.example 'Rails application support, --rails is no longer required', 'jspec init'
+  c.example 'Freeze JSpec\'s library at spec/lib', 'jspec init --freeze'
+  c.when_called do |args, options|
+    JSpec::Project.for(dest = args.shift || '.').init! options.__hash__
+    say "Template initialized at `#{dest}'"
+  end
+end
+
+command :shell do |c|
+  c.syntax = 'jspec shell [path ...]'
+  c.summary = 'JSpec interactive shell'
+  c.description = 'Launch interactive Rhino shell with jspec.js, jspec.shell.js, 
+    and any [path]s given. Simply type "quit" or "exit" to 
+    terminate the shell.'
+  c.example 'Run shell', 'jspec shell'
+  c.example 'Run shell with glob of files', 'jspec shell lib/*.js'
+  c.example 'Run shell with list of files', 'jspec shell lib/foo.js lib/bar.js'
+  c.when_called do |args, options|
+    paths = ['jspec.js', 'jspec.shell.js'] | args
+    paths.map! do |path|
+      if path.include? 'jspec.'
+        "-f #{JSPEC_ROOT}/lib/#{path}"
+      else
+        "-f #{path}"
+      end
+    end
+    say "JSpec #{program(:version)}"
+    `java -jar #{JSpec::Project::RHINO} #{paths.join(' ')} -f -`
+  end
+end
+
+command :update do |c|
+  c.syntax = 'jspec update [dest]'
+  c.summary = 'Update JSpec releases'
+  c.description = 'Update JSpec release relative to [dest], this will allow you 
+    to utilize the latest JSpec features. Execute from JSpec project 
+    root without [dest] to update the default template spec files.
+    
+    This command supports regular projects, as well as those initialized
+    with --symlink and --freeze.'
+  c.example 'Update project in the current directory', 'jspec update'
+  c.example 'Update project in the directory specified', 'jspec update path/to/project'
+  c.when_called do |args, options|
+    JSpec::Project.for(dest = args.shift || '.').update!
+  end
+end
+
+command :run do |c|
+  c.syntax = 'jspec run [path] [options]'
+  c.summary = 'Run specifications'
+  c.description = 'Run specifications, defaulting [path] to spec/dom.html.
+    You will need to supply [path] if your specs do not reside 
+    in this location. `run --bind` is the default sub-command of
+    jspec so you may simply execute `jspec` in order to bind execution
+    of your specs when a file is altered.
+    
+    Rhino:
+    The [path] is assumed to be spec/rhino.js unless specified.
+    
+    Node.js:
+    The [path] is assumed to be spec/node.js unless specified.
+    
+    JSpec\'s server is also available via --server, which defaults 
+    the [path] to spec/server.html'
+  c.example 'Run once in default browser', 'jspec run'
+  c.example 'Run once in Safari and Firefox', 'jspec run --browsers Safari,Firefox'
+  c.example 'Run once in Opera, Firefox, Chrome, and WebKit', 'jspec run --browsers opera,ff,chrome,webkit'
+  c.example 'Run custom spec file', 'jspec run foo.html'
+  c.example 'Auto-run browsers when a file is altered', 'jspec run --bind --browsers Safari,Firefox'
+  c.example 'Shortcut for the previous example', 'jspec --browsers Safari,Firefox'
+  c.example 'Run Rhino specs', 'jspec run --rhino'
+  c.example 'Auto-run rhino when a file is altered', 'jspec --rhino'
+  c.option '-b', '--browsers BROWSERS', Array, 'Specify browsers to test'
+  c.option '-p', '--paths PATHS', Array, 'Specify paths when binding, defaults to javascript within ./lib and ./spec'
+  c.option '-B', '--bind', 'Auto-run specs when source files or specs are altered'
+  c.option '-R', '--rhino', 'Run specs using Rhino'
+  c.option '-N', '--node', 'Run specs using Node.js'
+  c.option '-S', '--server', 'Run specs using the JSpec server'
+  c.option '-P', '--port NUMBER', Integer, 'Start JSpec server using the given port number'
+  c.when_called do |args, options|
+    JSpec::Project.for('.').run! args.first, options.__hash__
+  end
+end
+alias_command :bind, :run, '--bind'

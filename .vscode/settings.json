@@ -1,0 +1,8 @@
+{
+	"editor.formatOnSave": true,
+	"prettier.printWidth": 60,
+	"prettier.withNodeModules": false,
+	"prettier.useTabs": true,
+	"prettier.requireConfig": false,
+	"prettier.useEditorConfig": false
+}

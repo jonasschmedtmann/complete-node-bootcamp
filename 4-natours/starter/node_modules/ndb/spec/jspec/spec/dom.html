@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="../lib/jspec.css" />
+		<script src="support/jquery.js"></script>
+		<script src="../lib/jspec.js"></script>
+		<script src="../lib/jspec.jquery.js"></script>
+		<script src="../lib/jspec.xhr.js"></script>
+		<script src="unit/helpers.js"></script>
+		<script src="unit/spec.grammar-less.js"></script>
+		<script>
+			function runSuites() {
+			  JSpec
+        .exec('unit/spec.grammar.js')
+        .exec('unit/spec.js')
+        .exec('unit/spec.matchers.js')
+        .exec('unit/spec.utils.js')
+        .exec('unit/spec.fixtures.js')
+        .exec('unit/spec.shared-behaviors.js')
+        .exec('unit/spec.jquery.js')
+        .exec('unit/spec.modules.js')
+        .exec('unit/spec.xhr.js')
+        .exec('unit/spec.jquery.xhr.js')
+				.run({ failuresOnly: true, fixturePath: 'fixtures' })
+				.report()
+			}
+		</script>
+	</head>
+	<body class="jspec" onLoad="runSuites();">
+		<div id="jspec-top"><h2 id="jspec-title">JSpec <em><script>document.write(JSpec.version)</script></em></h2></div>
+		<div id="jspec"><div class="loading"></div></div>
+		<div id="jspec-bottom"></div>
+	</body>
+</html>

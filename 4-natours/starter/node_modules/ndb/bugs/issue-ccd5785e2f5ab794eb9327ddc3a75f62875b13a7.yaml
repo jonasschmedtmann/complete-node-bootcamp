@@ -1,0 +1,28 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: tmate
+desc: Add 'tmate' command to open textmate on current file & lineno
+type: :feature
+component: ndb
+release: 
+reporter: Scott Taylor <scott@railsnewbie.com>
+status: :unstarted
+disposition: 
+creation_time: 2010-04-14 06:22:36.187228 Z
+references: []
+
+id: ccd5785e2f5ab794eb9327ddc3a75f62875b13a7
+log_events: 
+- - 2010-04-14 06:23:20.622961 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - created
+  - |-
+    Will need to track the current file & lineno of the debugger.  Should this be taken from the last request instead
+    of querying when the command is given?
+- - 2010-04-14 06:42:08.245262 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - assigned to release 0.1.2 from unassigned
+  - ""
+- - 2010-04-27 07:52:17.596157 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - unassigned from release 0.1.2
+  - ""

@@ -1,0 +1,37 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Get tests working on v0.1.97.
+desc: |-
+  Reporting no tests on v0.1.97:
+  
+  node spec/node.js
+  
+   Passes: 0
+   Failures: 0
+   Duration: 0 ms
+type: :bugfix
+component: ndb
+release: 0.2.0
+reporter: Scott Taylor <scott@railsnewbie.com>
+status: :closed
+disposition: :fixed
+creation_time: 2010-06-08 06:10:31.531466 Z
+references: []
+
+id: 6e2e86e3118f9eff7e4fe9e6f774c0a01539796e
+log_events: 
+- - 2010-06-08 06:10:33.667398 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - created
+  - ""
+- - 2010-06-08 07:25:33.122283 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - closed with disposition fixed
+  - ""
+- - 2010-06-08 07:25:38.513619 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - assigned to release 0.1.6 from unassigned
+  - ""
+- - 2010-08-20 20:43:34.810509 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - assigned to release 0.2.0 from 0.1.6
+  - ""

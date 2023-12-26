@@ -1,0 +1,26 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: add history tracking
+desc: track history per session with "history"
+type: :feature
+component: ndb
+release: 0.1.5
+reporter: .
+status: :closed
+disposition: :fixed
+creation_time: 2010-05-21 05:06:09.910133 Z
+references: []
+
+id: 20b8233f1c98b73504a3390a93d648be9e6cab91
+log_events: 
+- - 2010-05-21 05:06:11.862143 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - created
+  - gs
+- - 2010-05-21 05:51:54.522400 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - closed with disposition fixed
+  - ""
+- - 2010-05-21 05:54:37.577515 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - assigned to release 0.1.5 from unassigned
+  - ""

@@ -1,0 +1,28 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: add readline support
+desc: |-
+  From ry:
+  
+  Hi Scott,
+  
+  I just wanted to alert you that there is a primitive readline library
+  in Node now.
+  
+  http://github.com/ry/node/blob/6056d2ea2c5e158f9a0daaad4bd242c405e49ab3/lib/readline.js
+  
+  I hope you'll be able to use it in ndb. Let me know what issues you hit
+type: :feature
+component: ndb
+release: 
+reporter: Scott Taylor <scott@railsnewbie.com>
+status: :unstarted
+disposition: 
+creation_time: 2010-06-08 06:11:24.936417 Z
+references: []
+
+id: 81f88ce897f0af5fb45a26f67e510acb59350066
+log_events: 
+- - 2010-06-08 06:11:25.944271 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - created
+  - ""

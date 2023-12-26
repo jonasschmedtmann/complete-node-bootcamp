@@ -1,0 +1,11 @@
+
+Version:
+1.0
+
+Installation:
+Just copy opts.js to your node.js project and import it with the require
+function. See included files for an example.
+
+Bugs:
+Please report bugs tohttp://bitbucket.org/mazzarelli/js-opts/issues/
+

@@ -1,0 +1,20 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: stderr
+desc: |-
+  We should be hooking into stderr with the --local flag (if the file doesn't
+  exist, etc., we should throw an exception and quit ndb)
+type: :feature
+component: ndb
+release: 
+reporter: Scott Taylor <scott@railsnewbie.com>
+status: :unstarted
+disposition: 
+creation_time: 2010-05-16 22:37:05.465993 Z
+references: []
+
+id: a3186b7a4ba509122aa448d1878a31dedc01b734
+log_events: 
+- - 2010-05-16 22:37:06.474135 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - created
+  - ""

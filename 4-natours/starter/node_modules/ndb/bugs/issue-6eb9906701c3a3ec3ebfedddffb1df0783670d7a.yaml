@@ -1,0 +1,37 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: --local option to run script directly
+desc: |-
+  syntax:
+  'ndb foo.js' (or 'ndb --local foo.js')
+  Run this as a little 'shell script', invoking the script with node --debug-brk foo.js, and then invoking the debugger
+type: :feature
+component: ndb
+release: 0.1.4
+reporter: Scott Taylor <scott@railsnewbie.com>
+status: :closed
+disposition: :fixed
+creation_time: 2010-04-14 06:26:13.156897 Z
+references: []
+
+id: 6eb9906701c3a3ec3ebfedddffb1df0783670d7a
+log_events: 
+- - 2010-04-14 06:26:16.748364 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - created
+  - ""
+- - 2010-04-14 06:42:43.971351 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - assigned to release 0.1.2 from unassigned
+  - ""
+- - 2010-04-27 07:52:24.163718 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - unassigned from release 0.1.2
+  - ""
+- - 2010-05-16 22:43:55.923167 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - closed with disposition fixed
+  - ""
+- - 2010-05-16 22:49:50.270165 Z
+  - Scott Taylor <scott@railsnewbie.com>
+  - assigned to release 0.1.4 from unassigned
+  - ""
