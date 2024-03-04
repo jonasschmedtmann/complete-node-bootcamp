@@ -29,17 +29,49 @@ const url = require("url");
 
 ///////////////////////
 ////////// SERVER
+const replaceTemplate = (temp, product) => {
+  let output = temp
+    .replace(/{%PRODUCTNAME%}/g, product.productName)
+    .replace(/{%IMAGE%}/g, product.image)
+    .replace(/{%FROM%}/g, product.from)
+    .replace(/{%NUTRIENTS%}/g, product.nutrients)
+    .replace(/{%QUANTITY%}/g, product.quantity)
+    .replace(/{%PRICE%}/g, product.price);
+  if (!product.organic)
+    output = output.replace(/{%NOT_ORGANIC%}/g, "not-organic");
+  output = output
+    .replace(/{%ID%}/g, product.id)
+    .replace(/{%DESCRIPTION%}/g, product.description);
+  return output;
+};
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8");
 const dataObj = JSON.parse(data);
+const tempCard = fs.readFileSync("./templates/template-card.html", "utf-8");
+const tempProduct = fs.readFileSync(
+  "./templates/template-product.html",
+  "utf-8"
+);
+const tempOverview = fs.readFileSync(
+  "./templates/template-overview.html",
+  "utf-8"
+);
 
 const server = http.createServer((req, res) => {
-  console.log(req.url);
-  const pathName = req.url;
-  if (pathName === "/" || pathName === "/overview") {
-    res.end("this is the overview");
-  } else if (pathName === "/product") {
-    res.end("this is the product");
-  } else if (pathName === "/api") {
+  const { query, pathname } = url.parse(req.url, true);
+
+  if (pathname === "/" || pathname === "/overview") {
+    res.writeHead(200, { "Content-type": "text/html" });
+    const cardsHtml = dataObj
+      .map((el) => replaceTemplate(tempCard, el))
+      .join("");
+    const output = tempOverview.replace("{%PRODUCT_CARDS%}", cardsHtml);
+    res.end(output);
+  } else if (pathname === "/product") {
+    res.writeHead(200, { "Content-type": "text/html" });
+    const product = dataObj[query.id];
+    const output = replaceTemplate(tempProduct, product);
+    res.end(output);
+  } else if (pathname === "/api") {
     res.writeHead(200, { "Content-type": "application/json" }); //for JSON format
     res.end(data);
   } else {
