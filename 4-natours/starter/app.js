@@ -23,7 +23,7 @@ app.get('/api/v1/tours/:id', (req, res) => {
 
   if (len < id) {
     return res.status(404).json({
-      status: 'chajma',
+      status: 'fail',
       message: 'igriale she yleo shen',
     });
   }
