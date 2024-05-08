@@ -27,7 +27,6 @@ app.get('/api/v1/tours/:id', (req, res) => {
       message: 'igriale she yleo shen',
     });
   }
-
   res.status(200).json({
     data: {
       tour,
