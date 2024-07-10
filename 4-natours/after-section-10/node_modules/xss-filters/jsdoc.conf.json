@@ -1,0 +1,26 @@
+{
+  "tags": {
+    "allowUnknownTags" : true
+  },
+  "plugins": ["plugins/markdown"],
+  "templates" : {
+    "cleverLinks"           : false,
+    "monospaceLinks"        : false,
+    "dateFormat"            : "ddd MMM Do YYYY",
+    "outputSourceFiles"     : false,
+    "outputSourcePath"      : false,
+    "systemName"            : "Yahoo",
+    "footer"                : "",
+    "copyright"             : "Copyright © 2015 Yahoo! Inc. All Rights Reserved.",
+    "navType"               : "vertical",
+    "theme"                 : "cerulean",
+    "linenums"              : true,
+    "collapseSymbols"       : false,
+    "inverseNav"            : true,
+    "highlightTutorialCode" : false,
+  },
+  "markdown"  : {
+    "parser"   : "gfm",
+    "hardwrap" : true
+  }
+}

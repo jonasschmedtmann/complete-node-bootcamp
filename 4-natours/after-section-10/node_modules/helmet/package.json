@@ -1,0 +1,87 @@
+{
+  "name": "helmet",
+  "author": "Adam Baldwin <adam@npmjs.com> (https://evilpacket.net)",
+  "contributors": [
+    "Evan Hahn <me@evanhahn.com> (https://evanhahn.com)"
+  ],
+  "description": "help secure Express/Connect apps with various HTTP headers",
+  "version": "3.23.3",
+  "keywords": [
+    "security",
+    "headers",
+    "express",
+    "connect",
+    "x-frame-options",
+    "x-powered-by",
+    "csp",
+    "hsts",
+    "clickjack"
+  ],
+  "homepage": "https://helmetjs.github.io/",
+  "bugs": {
+    "url": "https://github.com/helmetjs/helmet/issues",
+    "email": "me@evanhahn.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/helmetjs/helmet.git"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "files": [
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "README.md",
+    "SECURITY.md",
+    "dist/index.js",
+    "dist/middlewares/expect-ct/index.js",
+    "dist/middlewares/x-dns-prefetch-control/index.js",
+    "dist/middlewares/x-download-options/index.js",
+    "dist/middlewares/x-frame-options/index.js"
+  ],
+  "dependencies": {
+    "depd": "2.0.0",
+    "dont-sniff-mimetype": "1.1.0",
+    "feature-policy": "0.3.0",
+    "helmet-crossdomain": "0.4.0",
+    "helmet-csp": "2.10.0",
+    "hide-powered-by": "1.1.0",
+    "hpkp": "2.0.0",
+    "hsts": "2.2.0",
+    "nocache": "2.1.0",
+    "referrer-policy": "1.2.0",
+    "x-xss-protection": "1.3.0"
+  },
+  "devDependencies": {
+    "@types/connect": "^3.4.33",
+    "@types/depd": "^1.1.32",
+    "@types/jest": "^26.0.3",
+    "@types/supertest": "^2.0.9",
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
+    "connect": "^3.7.0",
+    "eslint": "^7.3.1",
+    "jest": "^26.1.0",
+    "prettier": "^2.0.5",
+    "supertest": "^4.0.2",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.5"
+  },
+  "scripts": {
+    "pretest": "npm run lint",
+    "prepublishOnly": "npm run build",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint:eslint": "eslint '**/*.ts'",
+    "lint:prettier": "prettier --check '**/*{md,js,json,ts}'",
+    "format": "prettier --write '**/*{md,js,json,ts}'",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc",
+    "build-middleware-package": "npm run build && ./bin/build-middleware-package.js",
+    "test": "jest"
+  },
+  "license": "MIT",
+  "main": "dist/index"
+}

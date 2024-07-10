@@ -1,0 +1,77 @@
+{
+  "name": "xss-filters",
+  "version": "1.2.7",
+  "licenses": [
+    {
+      "type": "BSD",
+      "url": "https://github.com/yahoo/xss-filters/blob/master/LICENSE"
+    }
+  ],
+  "description": "Secure XSS Filters - Just sufficient output filtering to prevent XSS!",
+  "author": "Adonis Fung <adon@yahoo-inc.com>, Nera Liu <neraliu@gmail.com>,  and Albert Yu <yukinying@gmail.com>",
+  "contributors": [
+    {
+      "name": "Adonis Fung",
+      "email": "adon@yahoo-inc.com"
+    },
+    {
+      "name": "Nera Liu",
+      "email": "neraliu@gmail.com"
+    },
+    {
+      "name": "Albert Yu",
+      "email": "yukinying@gmail.com"
+    }
+  ],
+  "main": "src/xss-filters.js",
+  "scripts": {
+    "test": "grunt test",
+    "hint": "grunt jshint",
+    "docs": "grunt docs",
+    "clean": "grunt clean",
+    "build": "grunt"
+  },
+  "keywords": [
+    "xss",
+    "output filter",
+    "sanitize",
+    "sanitise",
+    "escape",
+    "encode",
+    "filter",
+    "context-aware",
+    "context-sensitive",
+    "security",
+    "yahoo"
+  ],
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-jsdoc": "^2.1.0",
+    "grunt-karma": "^2.0.0",
+    "grunt-mocha-istanbul": "^5.0.2",
+    "ink-docstrap": "^1.3.0",
+    "istanbul": "^0.4.5",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-ie-launcher": "^1.0.0",
+    "karma-mocha": "^1.1.1",
+    "karma-sauce-launcher": "^1.0.0",
+    "mocha": "^3.0.2"
+  },
+  "bugs": {
+    "url": "https://github.com/yahoo/xss-filters/issues"
+  },
+  "homepage": "https://github.com/yahoo/xss-filters",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yahoo/xss-filters.git"
+  }
+}
