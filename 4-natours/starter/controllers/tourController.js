@@ -1,8 +1,6 @@
 // Tours Routes Handlers
 const Tour = require('../models/tourModel');
-const APIFeatures = require('../utils/apiFeatures');
 const catchAsync = require('../utils/catchAsync');
-const AppError = require('../utils/AppError');
 const HandleFactory = require('./handleFactory');
 
 exports.aliasTopTours = (req, _res, next) => {
@@ -13,7 +11,7 @@ exports.aliasTopTours = (req, _res, next) => {
 };
 
 exports.getAllTours = HandleFactory.getAll(Tour);
-exports.getTour = HandleFactory.getOne(Tour);
+exports.getTour = HandleFactory.getOne(Tour, { path: 'reviews' });
 exports.createTour = HandleFactory.createOne(Tour);
 exports.updateTour = HandleFactory.updateOne(Tour);
 exports.deleteTour = HandleFactory.deleteOne(Tour);

@@ -14,7 +14,7 @@ class APIFeatures {
     queryObj = JSON.parse(
       JSON.stringify(queryObj).replace(
         /\b(gte|gt|lte|lt)\b/g,
-        (mathch) => `$${mathch}`,
+        (match) => `$${match}`,
       ),
     );
     this.query = this.query.find(queryObj);

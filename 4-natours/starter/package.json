@@ -24,6 +24,7 @@
     "morgan": "^1.10.0",
     "ndp": "^1.0.2",
     "nodemailer": "^6.9.13",
+    "nodemon": "^3.1.4",
     "slugify": "^1.6.6",
     "validator": "^13.11.0",
     "xss-clean": "^0.1.4"

@@ -2,6 +2,9 @@ const express = require('express');
 const {
   getAllReviews,
   createReview,
+  getReview,
+  updateReview,
+  deleteReview,
 } = require('../controllers/reviewController');
 
 const authController = require('../controllers/authController');
@@ -16,5 +19,9 @@ ReviewRouter.route('/')
     authController.restrictTo('user'),
     createReview,
   );
+ReviewRouter.route('/:id')
+  .get(getReview)
+  .patch(authController.restrictTo('user', 'admin'), updateReview)
+  .delete(authController.restrictTo('user', 'admin'), deleteReview);
 
 module.exports = ReviewRouter;

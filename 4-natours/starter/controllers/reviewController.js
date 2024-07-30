@@ -1,6 +1,5 @@
 //Review Routes Handlers
 const Review = require('../models/reviewModel');
-const catchAsync = require('../utils/catchAsync');
 const HandleFactory = require('./handleFactory');
 
 exports.getAllReviews = HandleFactory.getAll(Review);
