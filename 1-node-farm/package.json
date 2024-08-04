@@ -1,0 +1,16 @@
+{
+  "name": "1-node-farm",
+  "version": "1.0.0",
+  "main": "1_promise.example.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
