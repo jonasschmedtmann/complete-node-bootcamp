@@ -1,1 +1,5 @@
 node_modules/
+.cache/
+*.env/
+after-section-13/
+after-section-08/
