@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node server.js",
-     "dev": "nodemon server.js",
+    "dev": "nodemon server.js",
     "start:prod": "set NODE_ENV=production&& nodemon server.js",
     "debug": "ndb server.js",
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
@@ -19,6 +19,7 @@
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "eslint-plugin-react-hooks": "^4.6.2",
     "express": "^4.19.2",
@@ -53,6 +54,6 @@
     "prettier": "^3.3.2"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": "^20"
   }
 }

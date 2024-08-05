@@ -20,6 +20,8 @@ var cookieParser = require('cookie-parser');
 
 var compression = require('compression');
 
+var cors = require('cors');
+
 var AppError = require('./utils/appError');
 
 var globalErrorHandler = require('./controllers/errorController');
@@ -35,6 +37,7 @@ var bookingRouter = require('./routes/bookingRoutes');
 var viewRouter = require('./routes/viewRoutes');
 
 var app = express();
+app.enable('trust proxy');
 app.use(function (req, res, next) {
   res.setHeader('Content-Security-Policy', "default-src 'self'; connect-src 'self' ws://127.0.0.1:49785 https:;");
   next();
@@ -43,7 +46,9 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views')); // 1) GLOBAL MIDDLEWARES
 // Serving static files
 
-app.use(express["static"](path.join(__dirname, 'public'))); // Set security HTTP headers
+app.use(express["static"](path.join(__dirname, 'public'))); // Implemrnt CORS
+
+app.use(cors()); // Set security HTTP headers
 
 app.use(helmet({
   contentSecurityPolicy: {

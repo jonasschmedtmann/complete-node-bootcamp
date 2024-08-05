@@ -23,14 +23,13 @@ var signToken = function signToken(id) {
   });
 };
 
-var createSendToken = function createSendToken(user, statusCode, res) {
+var createSendToken = function createSendToken(user, statusCode, req, res) {
   var token = signToken(user._id);
-  var cookiesOptions = {
+  res.cookie('jwt', token, {
     expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000),
-    httpOnly: true
-  };
-  if (process.env.NODE_ENV === 'production') cookiesOptions.secure = true;
-  res.cookie('jwt', token, cookiesOptions);
+    httpOnly: true,
+    secure: req.secure || req.headers['x-forwarded-proto'] === 'https'
+  });
   user.password = undefined;
   res.status(statusCode).json({
     status: 'success',
@@ -83,7 +82,7 @@ exports.signup = catchAsync(function _callee(req, res, next) {
           return regeneratorRuntime.awrap(new Email(newUser, url).sendWelcome());
 
         case 12:
-          createSendToken(newUser, 201, res);
+          createSendToken(newUser, 201, req, res);
 
         case 13:
         case "end":
@@ -139,7 +138,7 @@ exports.login = catchAsync(function _callee2(req, res, next) {
 
         case 13:
           // 3) If everything ok, send token to client
-          createSendToken(user, 200, res);
+          createSendToken(user, 200, req, res);
 
         case 14:
         case "end":
@@ -394,7 +393,7 @@ exports.resetPassword = catchAsync(function _callee6(req, res, next) {
         case 12:
           // 3) Update changedPasswordAt property for the user
           // 4) Log the user in, send JWT
-          createSendToken(user, 200, res);
+          createSendToken(user, 200, req, res);
 
         case 13:
         case "end":
@@ -435,7 +434,7 @@ exports.updatePassword = catchAsync(function _callee7(req, res, next) {
         case 11:
           // User.findByIdAndUpdate will NOT work as intended!
           // 4) Log user in, send JWT
-          createSendToken(user, 200, res);
+          createSendToken(user, 200, req, res);
 
         case 12:
         case "end":
