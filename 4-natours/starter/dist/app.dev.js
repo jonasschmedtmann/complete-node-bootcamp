@@ -18,6 +18,8 @@ var hpp = require('hpp');
 
 var cookieParser = require('cookie-parser');
 
+var compression = require('compression');
+
 var AppError = require('./utils/appError');
 
 var globalErrorHandler = require('./controllers/errorController');
@@ -87,7 +89,8 @@ app.use(xss()); // Prevent parameter pollution
 
 app.use(hpp({
   whitelist: ['duration', 'ratingsQuantity', 'ratingsAverage', 'maxGroupSize', 'difficulty', 'price']
-})); // Test middleware
+}));
+app.use(compression()); // Test middleware
 
 app.use(function (req, res, next) {
   req.requestTime = new Date().toISOString();
