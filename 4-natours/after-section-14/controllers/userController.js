@@ -96,6 +96,8 @@ exports.deleteMe = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.getAllUsers = factory.getAll(User);
+exports.getUser = factory.getOne(User);
 exports.createUser = (req, res) => {
   res.status(500).json({
     status: 'error',
@@ -103,8 +105,6 @@ exports.createUser = (req, res) => {
   });
 };
 
-exports.getUser = factory.getOne(User);
-exports.getAllUsers = factory.getAll(User);
 
 // Do NOT update passwords with this!
 exports.updateUser = factory.updateOne(User);
