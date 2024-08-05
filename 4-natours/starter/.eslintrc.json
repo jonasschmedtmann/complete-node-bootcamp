@@ -1,6 +1,12 @@
 {
   "extends": ["airbnb", "prettier", "plugin:node/recommended"],
   "plugins": ["prettier"],
+
+  // "parser": "@babel/eslint-parser",
+  // "parserOptions": {
+  //   "sourceType": "module",
+  //   "requireConfigFile": false
+  // },
   "rules": {
     "prettier/prettier": "error",
     "spaced-comment": "off",
