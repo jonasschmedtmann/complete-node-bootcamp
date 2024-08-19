@@ -8,7 +8,13 @@ exports.getAllUsers = HandleFactory.getAll(User);
 exports.getUser = HandleFactory.getOne(User);
 exports.updateUser = HandleFactory.updateOne(User);
 exports.deleteUser = HandleFactory.deleteOne(User);
-exports.createUser = HandleFactory.createOne(User);
+
+exports.createUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route not defined, Use /signup instead',
+  });
+};
 
 const filterObj = (obj, ...allowedFields) => {
   const filteredObj = {};
@@ -18,6 +24,11 @@ const filterObj = (obj, ...allowedFields) => {
   });
   return filteredObj;
 };
+
+exports.getMe = catchAsync(async (req, res, next) => {
+  req.params.id = req.user.id;
+  next();
+});
 
 exports.updateMe = catchAsync(async (req, res, next) => {
   if (req.body.password || req.body.passwordConfirm) {

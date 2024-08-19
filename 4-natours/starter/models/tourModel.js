@@ -36,6 +36,7 @@ const tourSchema = new mongoose.Schema(
       default: 3.5,
       min: [1, 'Rating must between 1 an 5'],
       max: [5, 'Rating must between 1 an 5'],
+      set: (val) => Math.round(val * 10) / 10, //Math.round returns Int
     },
 
     ratingsQuantity: {
@@ -89,17 +90,17 @@ const tourSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    // startLocation: {
-    //   //GeoJSON
-    //   type: {
-    //     type: String,
-    //     default: 'Point',
-    //     enum: ['Point'],
-    //   },
-    //   coordinates: [Number],
-    //   address: String,
-    //   description: String,
-    // },
+    startLocation: {
+      //GeoJSON
+      type: {
+        type: String,
+        default: 'Point',
+        enum: ['Point'],
+      },
+      coordinates: [Number],
+      address: String,
+      description: String,
+    },
     locations: [
       {
         type: {
@@ -126,6 +127,9 @@ const tourSchema = new mongoose.Schema(
     toObject: { virtual: true },
   },
 );
+
+tourSchema.index({ price: 1, ratingsAverge: -1 }); //Index   1 -> asc | -1 -> descending
+tourSchema.index({ startLocation: '2dsphere' }); 
 
 tourSchema.virtual('durationInWeeks').get(function () {
   return this.duration / 7;

@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.3](https://github.com/humanwhocodes/object-schema/compare/v2.0.2...v2.0.3) (2024-04-01)
+
+
+### Bug Fixes
+
+* Ensure test files are not including in package ([6eeb32c](https://github.com/humanwhocodes/object-schema/commit/6eeb32cc76a3e37d76b2990bd603d72061c816e0)), closes [#19](https://github.com/humanwhocodes/object-schema/issues/19)
+
 ## [2.0.2](https://github.com/humanwhocodes/object-schema/compare/v2.0.1...v2.0.2) (2024-01-10)
 
 

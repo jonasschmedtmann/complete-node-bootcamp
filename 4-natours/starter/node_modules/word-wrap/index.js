@@ -5,9 +5,18 @@
  * Released under the MIT License.
  */
 
+function trimEnd(str) {
+  let lastCharPos = str.length - 1;
+  let lastChar = str[lastCharPos];
+  while(lastChar === ' ' || lastChar === '\t') {
+    lastChar = str[--lastCharPos];
+  }
+  return str.substring(0, lastCharPos + 1);
+}
+
 function trimTabAndSpaces(str) {
   const lines = str.split('\n');
-  const trimmedLines = lines.map((line) => line.trimEnd());
+  const trimmedLines = lines.map((line) => trimEnd(line));
   return trimmedLines.join('\n');
 }
 
@@ -20,7 +29,7 @@ module.exports = function(str, options) {
   var width = options.width || 50;
   var indent = (typeof options.indent === 'string')
     ? options.indent
-    : '';
+    : '  ';
 
   var newline = options.newline || '\n' + indent;
   var escape = typeof options.escape === 'function'

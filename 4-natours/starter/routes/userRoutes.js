@@ -7,6 +7,7 @@ const {
   deleteUser,
   updateMe,
   deleteMe,
+  getMe,
 } = require('../controllers/userController');
 
 const authController = require('../controllers/authController');
@@ -17,11 +18,14 @@ userRouter.route('/signup').post(authController.signup);
 userRouter.route('/login').post(authController.login);
 userRouter.route('/forgotPassword').post(authController.forgotPassword);
 userRouter.route('/resetPassword/:token').patch(authController.resetPassword);
-userRouter
-  .route('/updatePassword')
-  .patch(authController.protect, authController.updatePassword);
-userRouter.route('/updateMe').patch(authController.protect, updateMe);
-userRouter.route('/deleteMe').delete(authController.protect, deleteMe);
+
+userRouter.use(authController.protect); //Each of the following will use protect
+userRouter.get('/me', getMe, getUser);
+userRouter.route('/updatePassword').patch(authController.updatePassword);
+userRouter.route('/updateMe').patch(updateMe);
+userRouter.route('/deleteMe').delete(deleteMe);
+
+userRouter.use(authController.restrictTo('admin')); //Each of the following will use restrict to
 
 userRouter.route('/').get(getAllUsers).post(createUser);
 
