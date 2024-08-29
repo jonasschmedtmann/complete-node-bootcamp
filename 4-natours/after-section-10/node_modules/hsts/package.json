@@ -1,0 +1,50 @@
+{
+  "name": "hsts",
+  "author": "Adam Baldwin <adam@npmjs.com> (https://evilpacket.net)",
+  "contributors": [
+    "Evan Hahn <me@evanhahn.com> (https://evanhahn.com)"
+  ],
+  "description": "HTTP Strict Transport Security middleware.",
+  "version": "2.2.0",
+  "license": "MIT",
+  "keywords": [
+    "helmet",
+    "security",
+    "express",
+    "connect",
+    "hsts",
+    "https"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/helmetjs/hsts.git"
+  },
+  "homepage": "https://helmetjs.github.io/docs/hsts/",
+  "bugs": {
+    "url": "https://github.com/helmetjs/hsts/issues",
+    "email": "me@evanhahn.com"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "pretest": "standard --fix",
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "connect": "^3.6.6",
+    "mocha": "^6.0.2",
+    "standard": "^12.0.1",
+    "supertest": "^4.0.0"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "beforeEach",
+      "it"
+    ]
+  },
+  "dependencies": {
+    "depd": "2.0.0"
+  }
+}

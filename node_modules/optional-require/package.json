@@ -1,0 +1,38 @@
+{
+  "name": "optional-require",
+  "version": "1.0.3",
+  "description": "NodeJS Require that let you handle module not found error without try/catch",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/spec",
+    "coverage": "istanbul cover _mocha -- test/spec/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jchip/optional-require.git"
+  },
+  "keywords": [
+    "optional require",
+    "optional",
+    "require"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=4"
+  },
+  "author": "Joel Chen",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "prettier": "1.19.1",
+    "require-at": "^1.0.0"
+  },
+  "dependencies": {},
+  "prettier": {
+    "printWidth": 120
+  }
+}

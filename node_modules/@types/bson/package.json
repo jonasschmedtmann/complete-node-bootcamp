@@ -1,0 +1,42 @@
+{
+    "name": "@types/bson",
+    "version": "4.0.5",
+    "description": "TypeScript definitions for bson",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/bson",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Hiroki Horiuchi",
+            "url": "https://github.com/horiuchi",
+            "githubUsername": "horiuchi"
+        },
+        {
+            "name": "Federico Caselli",
+            "url": "https://github.com/CaselIT",
+            "githubUsername": "CaselIT"
+        },
+        {
+            "name": "Justin Grant",
+            "url": "https://github.com/justingrant",
+            "githubUsername": "justingrant"
+        },
+        {
+            "name": "Mikael Lirbank",
+            "url": "https://github.com/lirbank",
+            "githubUsername": "lirbank"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/bson"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/node": "*"
+    },
+    "typesPublisherContentHash": "b18e64fb1b03aa633d8e6099af8a165986f71a3ef3f1bd9623119c3d9870435b",
+    "typeScriptVersion": "3.6"
+}

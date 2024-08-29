@@ -1,0 +1,19 @@
+'use strict';
+
+var callBound = require('call-bind/callBound');
+
+var $SymbolValueOf = callBound('Symbol.prototype.valueOf', true);
+
+// https://262.ecma-international.org/15.0/#sec-thissymbolvalue
+
+module.exports = function ThisSymbolValue(value) {
+	if (typeof value === 'symbol') {
+		return value;
+	}
+
+	if (!$SymbolValueOf) {
+		throw new SyntaxError('Symbols are not supported; thisSymbolValue requires that `value` be a Symbol or a Symbol object');
+	}
+
+	return $SymbolValueOf(value);
+};

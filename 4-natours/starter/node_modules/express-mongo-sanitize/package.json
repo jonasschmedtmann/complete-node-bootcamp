@@ -1,0 +1,49 @@
+{
+  "name": "express-mongo-sanitize",
+  "version": "2.2.0",
+  "description": "Sanitize your express payload to prevent MongoDB operator injection.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "lint": "eslint \"**/*.js\" --fix",
+    "prettier": "prettier --write .",
+    "test": "tsd && prettier --check . && mocha test.js",
+    "type-check": "tsd"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiznool/express-mongo-sanitize.git"
+  },
+  "keywords": [
+    "mongodb",
+    "express",
+    "middleware",
+    "operator",
+    "injection",
+    "security"
+  ],
+  "author": "Tom Spencer <fiznool@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fiznool/express-mongo-sanitize/issues"
+  },
+  "homepage": "https://github.com/fiznool/express-mongo-sanitize#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "body-parser": "^1.19.1",
+    "chai": "^4.3.4",
+    "eslint": "^8.6.0",
+    "express": "^4.17.2",
+    "mocha": "^9.1.3",
+    "prettier": "^2.5.1",
+    "supertest": "^6.2.1",
+    "tsd": "^0.19.1"
+  }
+}

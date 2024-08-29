@@ -1,0 +1,51 @@
+{
+  "name": "xss-clean",
+  "version": "0.1.4",
+  "description": "Middleware to sanitize user input",
+  "license": "MIT",
+  "files": [
+    "lib/",
+    "README.md"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "exlint src test",
+    "pretest": "rm -rf .nyc_output coverage && npm run lint",
+    "test": "cross-env NODE_ENV=testing nyc ava -a",
+    "posttest": "nyc report -r=lcov",
+    "coveralls": "cat coverage/lcov.info | coveralls",
+    "build": "rm -rf lib && babel src -d lib -s --no-comments",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "xss-filters": "1.2.7"
+  },
+  "devDependencies": {
+    "ava": "0.14.0",
+    "babel-cli": "6.5.1",
+    "babel-preset-es2015": "6.5.0",
+    "babel-register": "6.7.2",
+    "coveralls": "2.11.6",
+    "cross-env": "1.0.7",
+    "exlint": "0.1.0",
+    "nyc": "6.4.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  },
+  "nyc": {
+    "require": [
+      "babel-register"
+    ],
+    "include": [
+      "src"
+    ]
+  }
+}

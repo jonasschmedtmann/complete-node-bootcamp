@@ -1,0 +1,22 @@
+{
+  "name": "kareem",
+  "version": "2.3.2",
+  "description": "Next-generation take on pre/post function hooks",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/*",
+    "test-travis": "nyc mocha ./test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vkarpov15/kareem.git"
+  },
+  "devDependencies": {
+    "acquit": "1.x",
+    "acquit-ignore": "0.1.x",
+    "nyc": "11.x",
+    "mocha": "5.x"
+  },
+  "author": "Valeri Karpov <val@karpov.io>",
+  "license": "Apache-2.0"
+}
