@@ -1,5 +1,10 @@
 name: Custom test
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - staging
+      - 'fix/**'
+      - 'feature/**'
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -8,4 +13,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Install deps
         run: npm ci
+      - name: Go to 1 node
+        run: cd 1-node-farm/starter/
+      - name: Test Delivery Customization
+        run: npm run test
 
