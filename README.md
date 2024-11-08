@@ -24,7 +24,7 @@ Plus, I made all the [course slides available for download](theory-lectures.pdf)
 
 ### Q4: Can I see a final version of the course projects?
 
-**A:** Absolutely! The main project is [Natours](https://www.natours.dev/) (it even got its own domain 😎). You can log in with `laura@example.com` and password `test1234`. There is also an API at `/api`, with [documentation available here](https://documenter.getpostman.com/view/4237486/S1LwxnaE?version=latest) (incomplete). The small Node.js introduction project is [Node Farm](https://node-farm.herokuapp.com/).
+**A:** Absolutely! The main project is [Natours](https://www.natours.dev/) (it even got its own domain 😎). You can log in with `laura@example.com` and password `test1234`. There is also an API at `/api`, with [documentation available here](https://documenter.getpostman.com/view/4237486/S1LwxnaE?version=latest) (incomplete). The small Node.js introduction project is [Node Farm](https://node-farm.jonas.io/).
 
 ### Q5: Videos don't load, can you fix it?
 
