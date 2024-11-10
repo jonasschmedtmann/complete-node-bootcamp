@@ -1,0 +1,44 @@
+{
+  "name": "footpathfinders",
+  "version": "1.0.0",
+  "description": "This is a hicking and adventure thrill app, it gave you the near by location where to find one.",
+  "main": "app.ja",
+  "scripts": {
+    "start": "nodemon server.js",
+    "start:prod": " set NODE_ENV=production && nodemon server.js",
+    "debug": "ndb server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "footpathfinders"
+  },
+  "author": "Soumya Subhrajit Bag",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^5.13.17",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.1",
+    "slugify": "^1.6.6",
+    "validator": "^13.9.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^8.38.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "ndb": "^1.1.5",
+    "prettier": "^2.8.7"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}
