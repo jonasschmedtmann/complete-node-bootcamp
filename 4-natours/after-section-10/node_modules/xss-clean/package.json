@@ -1,0 +1,58 @@
+{
+  "name": "xss-clean",
+  "version": "0.1.1",
+  "description": "middleware to sanitize user input",
+  "author": "Jason Maurer <j@maur.co>",
+  "license": "MIT",
+  "homepage": "https://github.com/jsonmaur/xss-clean",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsonmaur/xss-clean"
+  },
+  "keywords": [
+    "express",
+    "restify",
+    "connect",
+    "middleware",
+    "xss",
+    "sanitize",
+    "sanitization",
+    "input",
+    "clean",
+    "cross",
+    "site",
+    "scripting",
+    "security",
+    "protect"
+  ],
+  "main": "./lib",
+  "scripts": {
+    "lint": "eslint src",
+    "prebuild": "rm -rf lib",
+    "build": "babel src -d lib -s --no-comments",
+    "pretest": "npm outdated && npm run lint",
+    "test": "istanbul cover tape -- tests/**/*.js | tap-spec",
+    "coveralls": "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js",
+    "prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "babel-cli": "6.5.1",
+    "babel-eslint": "5.0.0",
+    "babel-preset-es2015": "6.5.0",
+    "coveralls": "2.11.6",
+    "eslint": "2.2.0",
+    "eslint-config-google": "0.4.0",
+    "eslint-config-xo": "0.11.0",
+    "istanbul": "0.4.2",
+    "tap-spec": "4.1.1",
+    "tape": "4.4.0"
+  },
+  "dependencies": {
+    "xss-filters": "1.2.6"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}

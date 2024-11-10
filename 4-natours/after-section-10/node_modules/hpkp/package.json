@@ -1,0 +1,43 @@
+{
+  "name": "hpkp",
+  "author": "Adam Baldwin <baldwin@andyet.net> (http://andyet.net/team/baldwin)",
+  "license": "MIT",
+  "contributors": [
+    "Evan Hahn <me@evanhahn.com> (http://evanhahn.com)",
+    "Tom Delmas <tdelmas@gmail.com> (https://tdelmas.ovh)"
+  ],
+  "description": "HTTP Public Key Pinning (HPKP) middleware",
+  "version": "2.0.0",
+  "keywords": [
+    "helmet",
+    "security",
+    "express",
+    "connect",
+    "public-key pinning",
+    "https",
+    "cert",
+    "certificate"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/helmetjs/hpkp.git"
+  },
+  "bugs": "https://github.com/helmetjs/hpkp/issues",
+  "scripts": {
+    "pretest": "standard",
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "connect": "^3.5.0",
+    "mocha": "^3.1.2",
+    "standard": "^8.5.0",
+    "supertest": "^2.0.1"
+  },
+  "standard": {
+    "global": [
+      "beforeEach",
+      "describe",
+      "it"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+.DS_Store
+.idea/
+coverage/
+img/
+test/
+.editorconfig
+.gitignore
+.jshintrc
+.travis.yml
+gulpfile.js
+npm-debug.log

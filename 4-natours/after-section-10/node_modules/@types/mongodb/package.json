@@ -1,0 +1,193 @@
+{
+    "name": "@types/mongodb",
+    "version": "3.6.20",
+    "description": "TypeScript definitions for MongoDB",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/mongodb",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Federico Caselli",
+            "url": "https://github.com/CaselIT",
+            "githubUsername": "CaselIT"
+        },
+        {
+            "name": "Alan Marcell",
+            "url": "https://github.com/alanmarcell",
+            "githubUsername": "alanmarcell"
+        },
+        {
+            "name": "Gaurav Lahoti",
+            "url": "https://github.com/dante-101",
+            "githubUsername": "dante-101"
+        },
+        {
+            "name": "Mariano Cortesi",
+            "url": "https://github.com/mcortesi",
+            "githubUsername": "mcortesi"
+        },
+        {
+            "name": "Enrico Picci",
+            "url": "https://github.com/EnricoPicci",
+            "githubUsername": "EnricoPicci"
+        },
+        {
+            "name": "Alexander Christie",
+            "url": "https://github.com/AJCStriker",
+            "githubUsername": "AJCStriker"
+        },
+        {
+            "name": "Julien Chaumond",
+            "url": "https://github.com/julien-c",
+            "githubUsername": "julien-c"
+        },
+        {
+            "name": "Dan Aprahamian",
+            "url": "https://github.com/daprahamian",
+            "githubUsername": "daprahamian"
+        },
+        {
+            "name": "Denys Bushulyak",
+            "url": "https://github.com/denys-bushulyak",
+            "githubUsername": "denys-bushulyak"
+        },
+        {
+            "name": "Bastien Arata",
+            "url": "https://github.com/b4nst",
+            "githubUsername": "b4nst"
+        },
+        {
+            "name": "Wan Bachtiar",
+            "url": "https://github.com/sindbach",
+            "githubUsername": "sindbach"
+        },
+        {
+            "name": "Geraldine Lemeur",
+            "url": "https://github.com/geraldinelemeur",
+            "githubUsername": "geraldinelemeur"
+        },
+        {
+            "name": "Dominik Heigl",
+            "url": "https://github.com/various89",
+            "githubUsername": "various89"
+        },
+        {
+            "name": "Angela-1",
+            "url": "https://github.com/angela-1",
+            "githubUsername": "angela-1"
+        },
+        {
+            "name": "Hector Ribes",
+            "url": "https://github.com/hector7",
+            "githubUsername": "hector7"
+        },
+        {
+            "name": "Florian Richter",
+            "url": "https://github.com/floric",
+            "githubUsername": "floric"
+        },
+        {
+            "name": "Erik Christensen",
+            "url": "https://github.com/erikc5000",
+            "githubUsername": "erikc5000"
+        },
+        {
+            "name": "Nick Zahn",
+            "url": "https://github.com/Manc",
+            "githubUsername": "Manc"
+        },
+        {
+            "name": "Jarom Loveridge",
+            "url": "https://github.com/jloveridge",
+            "githubUsername": "jloveridge"
+        },
+        {
+            "name": "Luis Pais",
+            "url": "https://github.com/ranguna",
+            "githubUsername": "ranguna"
+        },
+        {
+            "name": "Hossein Saniei",
+            "url": "https://github.com/HosseinAgha",
+            "githubUsername": "HosseinAgha"
+        },
+        {
+            "name": "Alberto Silva",
+            "url": "https://github.com/albertossilva",
+            "githubUsername": "albertossilva"
+        },
+        {
+            "name": "Piotr Błażejewicz",
+            "url": "https://github.com/peterblazejewicz",
+            "githubUsername": "peterblazejewicz"
+        },
+        {
+            "name": "Linus Unnebäck",
+            "url": "https://github.com/LinusU",
+            "githubUsername": "LinusU"
+        },
+        {
+            "name": "Richard Bateman",
+            "url": "https://github.com/taxilian",
+            "githubUsername": "taxilian"
+        },
+        {
+            "name": "Igor Strebezhev",
+            "url": "https://github.com/xamgore",
+            "githubUsername": "xamgore"
+        },
+        {
+            "name": "Valentin Agachi",
+            "url": "https://github.com/avaly",
+            "githubUsername": "avaly"
+        },
+        {
+            "name": "HitkoDev",
+            "url": "https://github.com/HitkoDev",
+            "githubUsername": "HitkoDev"
+        },
+        {
+            "name": "TJT",
+            "url": "https://github.com/Celend",
+            "githubUsername": "Celend"
+        },
+        {
+            "name": "Julien TASSIN",
+            "url": "https://github.com/jtassin",
+            "githubUsername": "jtassin"
+        },
+        {
+            "name": "Anna Henningsen",
+            "url": "https://github.com/addaleax",
+            "githubUsername": "addaleax"
+        },
+        {
+            "name": "Emmanuel Gautier",
+            "url": "https://github.com/emmanuelgautier",
+            "githubUsername": "emmanuelgautier"
+        },
+        {
+            "name": "Wyatt Johnson",
+            "url": "https://github.com/wyattjoh",
+            "githubUsername": "wyattjoh"
+        },
+        {
+            "name": "Boris Figovsky",
+            "url": "https://github.com/borfig",
+            "githubUsername": "borfig"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/mongodb"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/bson": "*",
+        "@types/node": "*"
+    },
+    "typesPublisherContentHash": "4424cca7a452613f996286310bde1bc954ab161915fd1ab3c77f71592d73bb34",
+    "typeScriptVersion": "3.6"
+}

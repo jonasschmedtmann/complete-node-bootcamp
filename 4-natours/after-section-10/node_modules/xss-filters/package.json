@@ -1,0 +1,67 @@
+{
+  "name": "xss-filters",
+  "version": "1.2.6",
+  "licenses": [
+    {
+      "type": "BSD",
+      "url": "https://github.com/yahoo/xss-filters/blob/master/LICENSE"
+    }
+  ],
+  "description": "Secure XSS Filters - Just sufficient output filtering to prevent XSS!",
+  "author": "Nera Liu <neraliu@yahoo-inc.com>, Adonis Fung <adon@yahoo-inc.com> and Albert Yu <albertyu@yahoo-inc.com>",
+  "contributors": [
+    {
+      "name": "Nera Liu",
+      "email": "neraliu@yahoo-inc.com"
+    },
+    {
+      "name": "Adonis Fung",
+      "email": "adon@yahoo-inc.com"
+    },
+    {
+      "name": "Albert Yu",
+      "email": "albertyu@yahoo-inc.com"
+    }
+  ],
+  "main": "src/xss-filters.js",
+  "scripts": {
+    "test": "grunt test",
+    "hint": "grunt jshint",
+    "docs": "grunt docs",
+    "clean": "grunt clean",
+    "build": "grunt"
+  },
+  "keywords": [
+    "xss",
+    "output filter",
+    "sanitize",
+    "sanitise",
+    "escape",
+    "encode",
+    "filter",
+    "context-aware",
+    "context-sensitive",
+    "security",
+    "yahoo"
+  ],
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^3.8.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-jsdoc": "^0.5.8",
+    "grunt-mocha-istanbul": "^2.4.0"
+  },
+  "bugs": {
+    "url": "https://github.com/yahoo/xss-filters/issues"
+  },
+  "homepage": "https://github.com/yahoo/xss-filters",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yahoo/xss-filters.git"
+  }
+}

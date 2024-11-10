@@ -127,7 +127,7 @@
     "name": "The Snow Adventurer",
     "duration": 4,
     "maxGroupSize": 10,
-    "difficulty": "difficult",
+    "difficulty": "hard",
     "guides": [
       "5c8a21d02f8fb814b56fa189",
       "5c8a23412f8fb814b56fa18c",
@@ -282,7 +282,7 @@
     "name": "The Sports Lover",
     "duration": 14,
     "maxGroupSize": 8,
-    "difficulty": "difficult",
+    "difficulty": "hard",
     "guides": [
       "5c8a21f22f8fb814b56fa18a",
       "5c8a1f292f8fb814b56fa184",

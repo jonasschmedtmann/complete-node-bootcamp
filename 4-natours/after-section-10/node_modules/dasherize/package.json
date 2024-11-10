@@ -1,0 +1,50 @@
+{
+  "name": "dasherize",
+  "version": "2.0.0",
+  "description": "recursively transform key strings to dash-case",
+  "main": "index.js",
+  "devDependencies": {
+    "tape": "~2.3.2"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shahata/dasherize.git"
+  },
+  "homepage": "https://github.com/shahata/dasherize",
+  "keywords": [
+    "dash-case",
+    "json",
+    "transform"
+  ],
+  "testling": {
+    "files": "test/*.js",
+    "browsers": {
+      "iexplore": [
+        "6.0",
+        "7.0",
+        "8.0",
+        "9.0"
+      ],
+      "chrome": [
+        "20.0"
+      ],
+      "firefox": [
+        "10.0",
+        "15.0"
+      ],
+      "safari": [
+        "5.1"
+      ],
+      "opera": [
+        "12.0"
+      ]
+    }
+  },
+  "author": {
+    "name": "Shahar Talmi"
+  },
+  "license": "MIT"
+}

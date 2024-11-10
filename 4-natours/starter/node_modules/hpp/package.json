@@ -1,0 +1,51 @@
+{
+  "name": "hpp",
+  "version": "0.2.3",
+  "description": "Express middleware to protect against HTTP Parameter Pollution attacks",
+  "keywords": [
+    "hpp",
+    "http",
+    "parameter",
+    "pollution",
+    "attack",
+    "security"
+  ],
+  "homepage": "https://github.com/analog-nico/hpp",
+  "bugs": {
+    "url": "https://github.com/analog-nico/hpp/issues"
+  },
+  "license": "ISC",
+  "author": "Nicolai Kamenzky (https://github.com/analog-nico)",
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/analog-nico/hpp.git"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/gulp ci"
+  },
+  "dependencies": {
+    "lodash": "^4.17.12",
+    "type-is": "^1.6.12"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "devDependencies": {
+    "body-parser": "^1.15.0",
+    "chai": "^3.5.0",
+    "chalk": "^1.1.3",
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "gulp-coveralls": "^0.1.4",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-jshint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0",
+    "present": "0.0.6",
+    "request-promise": "^2.0.1",
+    "rimraf": "^2.5.2",
+    "run-sequence": "^1.1.5"
+  }
+}
