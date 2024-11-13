@@ -1,0 +1,23 @@
+{
+  "name": "mongoose-legacy-pluralize",
+  "version": "1.0.2",
+  "description": "Legacy pluralization logic for mongoose",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vkarpov15/mongoose-legacy-pluralize.git"
+  },
+  "keywords": [
+    "mongoose",
+    "mongodb"
+  ],
+  "peerDependencies": {
+    "mongoose": "*"
+  },
+  "author": "Valeri Karpov <val@karpov.io>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/vkarpov15/mongoose-legacy-pluralize/issues"
+  },
+  "homepage": "https://github.com/vkarpov15/mongoose-legacy-pluralize"
+}

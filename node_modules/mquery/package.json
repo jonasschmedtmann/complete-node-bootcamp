@@ -1,0 +1,84 @@
+{
+  "name": "mquery",
+  "version": "3.2.5",
+  "description": "Expressive query building for MongoDB",
+  "main": "lib/mquery.js",
+  "scripts": {
+    "test": "mocha test/index.js test/*.test.js",
+    "fix-lint": "eslint . --fix",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aheckmann/mquery.git"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "bluebird": "3.5.1",
+    "debug": "3.1.0",
+    "regexp-clone": "^1.0.0",
+    "safe-buffer": "5.1.2",
+    "sliced": "1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "5.x",
+    "mocha": "4.1.0",
+    "mongodb": "3.6.1"
+  },
+  "bugs": {
+    "url": "https://github.com/aheckmann/mquery/issues/new"
+  },
+  "author": "Aaron Heckmann <aaron.heckmann+github@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "mongodb",
+    "query",
+    "builder"
+  ],
+  "homepage": "https://github.com/aheckmann/mquery/",
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "mocha": true,
+      "es6": false
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "ecmaVersion": 5
+    },
+    "rules": {
+      "comma-style": "error",
+      "consistent-this": [
+        "error",
+        "_this"
+      ],
+      "indent": [
+        "error",
+        2,
+        {
+          "SwitchCase": 1,
+          "VariableDeclarator": 2
+        }
+      ],
+      "keyword-spacing": "error",
+      "no-console": "off",
+      "no-multi-spaces": "error",
+      "func-call-spacing": "error",
+      "no-trailing-spaces": "error",
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": "error",
+      "space-before-blocks": "error",
+      "space-before-function-paren": [
+        "error",
+        "never"
+      ],
+      "space-infix-ops": "error",
+      "space-unary-ops": "error"
+    }
+  }
+}
