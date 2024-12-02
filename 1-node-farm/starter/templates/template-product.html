@@ -13,7 +13,7 @@
       href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/155/ear-of-maize_1f33d.png"
     />
 
-    <title>Fresh Avocados 🥑 /// NODE FARM</title>
+    <title>{%PRODUCTNAME%} {%IMAGE%} /// NODE FARM</title>
 
     <style>
       *,
@@ -270,44 +270,36 @@
       <h1>🌽 Node Farm 🥦</h1>
 
       <figure class="product">
-        <div class="product__organic"><h5>Organic</h5></div>
-        <a href="#" class="product__back">
+        <div class="product__organic {%NOT_ORGANIC%}"><h5>Organic</h5></div>
+        <a href="/overview" class="product__back">
           <span class="emoji-left">👈</span>Back
         </a>
         <div class="product__hero">
-          <span class="product__emoji product__emoji--1">🥑</span>
-          <span class="product__emoji product__emoji--2">🥑</span>
-          <span class="product__emoji product__emoji--3">🥑</span>
-          <span class="product__emoji product__emoji--4">🥑</span>
-          <span class="product__emoji product__emoji--5">🥑</span>
-          <span class="product__emoji product__emoji--6">🥑</span>
-          <span class="product__emoji product__emoji--7">🥑</span>
-          <span class="product__emoji product__emoji--8">🥑</span>
-          <span class="product__emoji product__emoji--9">🥑</span>
+          <span class="product__emoji product__emoji--1">{%IMAGE%}</span>
+          <span class="product__emoji product__emoji--2">{%IMAGE%}</span>
+          <span class="product__emoji product__emoji--3">{%IMAGE%}</span>
+          <span class="product__emoji product__emoji--4">{%IMAGE%}</span>
+          <span class="product__emoji product__emoji--5">{%IMAGE%}</span>
+          <span class="product__emoji product__emoji--6">{%IMAGE%}</span>
+          <span class="product__emoji product__emoji--7">{%IMAGE%}</span>
+          <span class="product__emoji product__emoji--8">{%IMAGE%}</span>
+          <span class="product__emoji product__emoji--9">{%IMAGE%}</span>
         </div>
-        <h2 class="product__name">Fresh Avocados</h2>
+        <h2 class="product__name">{%PRODUCTNAME%}</h2>
         <div class="product__details">
-          <p><span class="emoji-left">🌍</span> From Portugal</p>
-          <p><span class="emoji-left">❤️</span> Vitamin B, Vitamin K</p>
-          <p><span class="emoji-left">📦</span> 4 🥑</p>
-          <p><span class="emoji-left">🏷</span> 6.50€</p>
+          <p><span class="emoji-left">🌍</span>From {%FROM%}</p>
+          <p><span class="emoji-left">❤️</span>{%NUTRIENTS%}</p>
+          <p><span class="emoji-left">📦</span>{%QUANTITY%}</p>
+          <p><span class="emoji-left">🏷</span>{%PRICE%}€</p>
         </div>
   
         <a href="#" class="product__link">
           <span class="emoji-left">🛒</span>
-          <span>Add to shopping card (6.50€)</span>
+          <span>Add to shopping card ({%PRICE%}€)</span>
         </a>
   
         <p class="product__description">
-          A ripe avocado yields to gentle pressure when held in the palm of the
-          hand and squeezed. The fruit is not sweet, but distinctly and subtly
-          flavored, with smooth texture. The avocado is popular in vegetarian
-          cuisine as a substitute for meats in sandwiches and salads because of
-          its high fat content. Generally, avocado is served raw, though some
-          cultivars, including the common 'Hass', can be cooked for a short time
-          without becoming bitter. It is used as the base for the Mexican dip
-          known as guacamole, as well as a spread on corn tortillas or toast,
-          served with spices.
+          {%DESCRIPTION%}
         </p>
       </figure>
       
