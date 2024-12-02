@@ -33,7 +33,7 @@
     "sharp": "^0.22.1",
     "slugify": "^1.3.4",
     "stripe": "^7.0.0",
-    "validator": "^10.11.0",
+    "validator": "^13.7.0",
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {
