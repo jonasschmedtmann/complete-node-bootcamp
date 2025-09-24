@@ -1,0 +1,1 @@
+for(var r=256,n=[];r--;)n[r]=(r+256).toString(16).substring(1);export function hexoid(r){r=r||16;var t="",o=0;return function(){if(!t||256===o){for(t="",o=(1+r)/2|0;o--;)t+=n[256*Math.random()|0];t=t.substring(o=0,r-2)}return t+n[o++]}}
